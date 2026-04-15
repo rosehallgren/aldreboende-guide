@@ -91,6 +91,25 @@
         .travel-row{display:flex;gap:1rem;flex-wrap:wrap;font-size:.76rem;padding:.5rem 0;border-top:1px solid var(--border)}
         .src-row{padding:.5rem 0 0;border-top:1px solid var(--border);font-size:.68rem;line-height:1.8;color:var(--light)}
         .src-row a{color:var(--light);text-decoration:underline;text-decoration-color:var(--border)}.src-row a:hover{color:var(--accent)}
+
+        .fav-btn{position:absolute;top:12px;right:14px;background:none;border:none;cursor:pointer;font-size:1.2rem;padding:4px;opacity:.4;transition:opacity .2s}
+        .fav-btn:hover,.fav-btn.active{opacity:1}
+        .fav-btn.active{color:#e53e3e}
+
+        .fav-panel{background:var(--green-light);border:1px solid #c6f6d5;border-radius:10px;padding:1.3rem 1.6rem;margin-bottom:1.5rem;display:none}
+        .fav-panel.show{display:block}
+        .fav-panel h3{margin:0 0 .6rem;font-size:.95rem;color:var(--green)}
+        .fav-panel p{font-size:.78rem;color:var(--mid);margin-bottom:.6rem}
+        .fav-list{list-style:none;margin:0;padding:0}
+        .fav-list li{font-size:.82rem;padding:.3rem 0;border-bottom:1px solid #c6f6d5;display:flex;justify-content:space-between;align-items:center}
+        .fav-list li:last-child{border-bottom:none}
+        .fav-list .fl-name{font-weight:500;color:var(--dark)}
+        .fav-list .fl-meta{color:var(--light);font-size:.72rem}
+        .fav-copy{margin-top:.8rem;font-family:'Inter',sans-serif;font-size:.75rem;padding:.4rem .8rem;border:1px solid var(--green);border-radius:6px;background:var(--white);color:var(--green);cursor:pointer;font-weight:500}
+        .fav-copy:hover{background:var(--green);color:var(--white)}
+        .copied-msg{font-size:.72rem;color:var(--green);margin-left:.5rem;display:none}
+
+        .read-more{font-size:.72rem;font-weight:500;margin-top:.3rem;display:inline-block}
         .tr{color:var(--mid)}.tr strong{color:var(--dark)}.tr .rt{color:var(--light);font-size:.68rem}
 
         .info{background:var(--bg);border-left:3px solid var(--border);padding:.9rem 1.3rem;margin:1rem 0;border-radius:0 6px 6px 0;font-size:.85rem}
@@ -167,6 +186,14 @@
 
 <section id="boenden">
 <h2>Boenden</h2>
+
+<div class="fav-panel" id="fav-panel">
+    <h3>Mina favoriter</h3>
+    <p>Dessa kan du skicka till bistandshandlaggaren som dina onskade boenden.</p>
+    <ul class="fav-list" id="fav-list"></ul>
+    <button class="fav-copy" id="fav-copy" onclick="copyFavs()">Kopiera som text</button>
+    <span class="copied-msg" id="copied-msg">Kopierat!</span>
+</div>
 
 <div class="filters">
     <div class="filters-title">Filtrera</div>
@@ -265,7 +292,7 @@ const H=[
  badges:["Silviahemscertifierat","88% nojdhet","Ideell sedan 1724"],bt:["go","g","b"],
  desc:"Drivs utan vinstsyfte sedan 1724. 50 somatiska + 24 demensplatser. Forst i Sverige med Silviahemmets palliativa vardfilosofi. Sjukgymnaster OCH arbetsterapeuter pa plats vardagar. Salutogent forhallningssatt. Upphojt lage med stadsutsikt. Man behover INTE vara medlem (Borgare) for att bo har, det racker med bistandsbeslut fran kommunen.",
  phone:"08-620 89 00",email:"",
- rent:"Ej publicerad (varierar, 23 till 78 kvm)",rentNum:0,
+ rent:"6 300 till 19 000 kr/man",rentNum:6300,food:"3 616 kr/man",
  dog:"Fraga boendet direkt",dogOk:false,
  review:"\"While the place appears good, it destroys all that is fine remaining in life\" (Patientguiden, 1 recension, 1/5). OBS: enstaka recension, kanske inte representativ. 88% nojdhet i Socialstyrelsens undersokning.",
  sources:[["Borgerskapet: Ansok om plats","https://www.borgerskapet.se/vard-och-omsorg/ansok-om-plats-pa-vard-och-omsorgsboende/"],["Borgerskapet: Vad kostar","https://www.borgerskapet.se/vard-och-omsorg/vad-kostar-omsorgsboende/"],["Borgerskapet: FAQ (medlemskap)","https://www.borgerskapet.se/fragor-och-svar/"],["Patientguiden: recension","https://www.patientguiden.se/vardgivare/230292-borgerskapets-aldrehem"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/borgerskapets-vard-och-omsorgsboende"]],
@@ -282,7 +309,7 @@ const H=[
  badges:["Bland Sveriges basta","4.8 till 4.9/5"],bt:["go","g"],
  desc:"Rankas i den absoluta svenska toppen av Socialstyrelsen. 74 lagenheter med balkong. Sjukskoterskor dygnet runt, lakare 2 ggr/vecka. Vacker aldre byggnad med tradgard och vintertradgard.",
  phone:"010-140 10 70",email:"",
- rent:"7 700 till 11 200 kr/man",rentNum:7700,
+ rent:"7 700 till 11 200 kr/man",rentNum:7700,food:"3 616 kr/man",
  dog:"Fraga verksamhetschef Daniel Ekman",dogOk:false,
  review:"\"Sa har efter en vecka daligt. Maten under all kritik.\" (Hitta.se, 1 recension). MEN Socialstyrelsen ger 4.8 till 4.9 av 5, bland landets hogsta.",
  sources:[["Attendo Langbroberg (Seniorval)","https://seniorval.se/aldreboende/stockholm/attendo-langbroberg-alvsjo"],["Attendo Spadvagen (Attendo)","https://www.attendo.se/aldreboende/hitta-aldreboende/stockholm/alvsjo/spadvagen/"],["Attendo: Vad kostar","https://www.attendo.se/aldreboende/vad-kostar-aldreboende/"],["Pressmeddelande: Sveriges basta","https://news.cision.com/se/attendo-pressmeddelanden/r/attendo-langbroberg-ett-av-sveriges-basta-aldreboenden,c9177015"]],
@@ -299,7 +326,7 @@ const H=[
  badges:["Stjarnmarkt","85% nojdhet","Egna lakare dygnet runt"],bt:["go","g","b"],
  desc:"En av Sveriges storsta ideella vardgivare. 102 lgh med eget kok, tvattmaskin och torktumlare. Egna lakare dygnet runt, ovanligt och vardefullt. 94% bra bemotande. Hanterar aven forvarvad hjarnskada, relevant for Rolfs stroke. Nominerad White Guide Senior for maten. Terapihund Scooby besoker 2 ggr/vecka.",
  phone:"08-122 84 808",email:"",
- rent:"Ej publicerad (kontakta boendet)",rentNum:0,
+ rent:"12 525 kr/man",rentNum:12525,food:"3 616 kr/man",
  dog:"Terapihund Scooby besoker 2 ggr/vecka. Fraga om eget hundbesok.",dogOk:true,
  review:"Socialstyrelsens undersokning: boende och anhoriga ar \"positiva och nojda\". Vard och trygghet far hogst betyg.",
  sources:[["Vallgossen (Stockholms Sjukhem)","https://stockholmssjukhem.se/aldreboenden/vara-aldreboenden/kungsholmen-vallgossen/"],["Vallgossen demensenheter","https://stockholmssjukhem.se/aldreboenden/vara-aldreboenden/kungsholmen-vallgossen/demensenheter/"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/vallgossen"],["Vad tycker de aldre 2023","https://stockholmssjukhem.se/aktuellt/nyheter/2023/vad-tycker-de-aldre-om-vallgossen-och-hornskroken-2023/"]],
@@ -316,7 +343,7 @@ const H=[
  badges:["Nominerat Arets Byggnad 2021","Ersta diakoni","Oppnat 2020"],bt:["go","g","b"],
  desc:"Nybyggt 2020, nominerat till Arets vard- och omsorgsbyggnad. 36 demens + 18 somatik. \"Playa del Lydia\", ljus- och solrum. ISO-certifierat. Nara Farsta Strand T-bana. Hyra inkluderar hemorsakring, el, internet, TV.",
  phone:"08-714 63 62",email:"Joy.seguis@erstadiakoni.se",
- rent:"Ej publicerad (baserat pa storlek)",rentNum:0,
+ rent:"9 202 kr/man",rentNum:9202,food:"3 616 kr/man",
  dog:"JA, Ersta valkomnar hundar! Hund ska vara rumsren och inte aggressiv. Anhoriga ansvarar.",dogOk:true,
  review:"\"Fantastiskt stalle\" med \"super harlig personal som brinner for det de gor, alltid glada och trevliga\" och \"manga trevliga aktiviteter, hembakt fika, fint dukat\". 3.7/5 pa Hitta.se (3 recensioner).",
  sources:[["Ersta Lydiahemmet","https://www.erstadiakoni.se/lydiahemmet"],["Ersta husdjurspolicy","https://www.erstadiakoni.se/verksamheter/aldreomsorg/aldreboenden/vara-aldreboenden/var-husdjurspolicy/"],["Ersta kostnader","https://www.erstadiakoni.se/verksamheter/aldreomsorg/aldreboenden/att-bo-hos-oss/kostnader-for-att-bo-pa-aldreboende/"],["Hitta.se recensioner","https://www.hitta.se/ersta+lydiahemmet/farsta/fccgtfkcm"],["Nominering Arets byggnad","https://www.erstadiakoni.se/om-ersta/artiklar/artikelarkiv/lydiahemmet-nominerat-till-arets-vard--och-omsorgsbyggnad/"]],
@@ -350,7 +377,7 @@ const H=[
  badges:["Stjarnmarkt","ISO-certifierat"],bt:["go","g"],
  desc:"Erstas forsta aldreboende, rotter fran 1800-talet. Stjarnmarkt: 80%+ av personalen genomfort alla 4 demensutbildningssteg. ISO 9001 + ISO 14001. 83 lagenheter. Nara Sandsborg T-bana.",
  phone:"08-462 31 34",email:"",
- rent:"Ej publicerad (baserat pa storlek)",rentNum:0,
+ rent:"8 156 kr/man",rentNum:8156,food:"3 616 kr/man",
  dog:"JA, Ersta valkomnar hundar! Samma policy som Lydiahemmet.",dogOk:true,
  review:"5.0/5 pa Hitta.se (1 recension). Vacker innergard for fika och tradgardsaktiviteter.",
  sources:[["Ersta Mariahemmet","https://www.erstadiakoni.se/verksamheter/aldreomsorg/aldreboenden/vara-aldreboenden/mariahemmet/"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/ersta-mariahemmet"],["Stjarnmarkt certifiering","https://www.erstadiakoni.se/om-ersta/artiklar/artikelarkiv/mariahemmet-ar-nu-ett-stjarnmarkt-aldreboende2/"],["Ersta husdjurspolicy","https://www.erstadiakoni.se/verksamheter/aldreomsorg/aldreboenden/vara-aldreboenden/var-husdjurspolicy/"]],
@@ -401,7 +428,7 @@ const H=[
  badges:["86.7% nojdhet, hogst pa Lidingo"],bt:["g"],
  desc:"Hogst nojdhet pa Lidingo (Socialstyrelsen). 80 lagenheter, 10 enheter om 8. Sjukskoterskor, sjukgymnaster, arbetsterapeuter. Sasongmenyer. Bade demens och somatik.",
  phone:"010-140 10 70",email:"",
- rent:"9 250 kr/man (inkl. internet)",rentNum:9250,
+ rent:"8 852 kr/man",rentNum:8852,food:"3 616 kr/man",
  dog:"Fraga verksamhetschef Caroline Ostberg",dogOk:false,
  review:"86.7% nojdhet i Socialstyrelsens undersokning. Inga individuella recensioner hittade.",
  sources:[["Attendo Nilstorpsgarden","https://www.attendo.se/aldreboende/hitta-aldreboende/stockholm/lidingo/nilstorpsgarden/"],["Pressmeddelande: Bast pa Lidingo","https://www.mynewsdesk.com/se/attendo/pressreleases/attendo-nilstorp-baest-paa-lidingoe-882806"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/attendo-nilstorpsgarden"]],
@@ -435,7 +462,7 @@ const H=[
  badges:["Silviahemscertifierat"],bt:["go"],
  desc:"Silviahemscertifierat i moderna Hammarby Sjostad. 32 demens + 27 somatik. Musik, malning, traning, promenader. Tvarbanan + buss.",
  phone:"08-657 89 44",email:"camilla.falkbrink@humana.se",
- rent:"Ej publicerad (kontakta boendet)",rentNum:0,
+ rent:"6 459 till 7 479 kr/man",rentNum:6459,food:"3 616 kr/man",
  dog:"Fraga verksamhetschef Camilla Falkbrink",dogOk:false,
  review:"4.3/5 pa Stanplats (6 recensioner). \"Fantastiskt aldreboende, underbar personal, otroligt nojd.\" Men aven: \"Inte en sarskilt bra plats for personer med demens.\"",
  sources:[["Humana Sjostadsgarden","https://www.humana.se/aldreomsorg/hitta-ditt-aldreboende/sjostadsgarden-i-stockholm"],["Stanplats: recensioner","https://stanplats.se/foretag/humana-sjostadsgarden-sodermalm/"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/humana-sjostadsgarden"]],
@@ -452,7 +479,7 @@ const H=[
  badges:["Nominerad Kundkristallen","AldrePoer gym","Ideell"],bt:["go","b","g"],
  desc:"66 lgh, ideell forening. AldrePoer-program: individuell fysisk traning (styrka, balans, rorlighet) med sjukgymnast i eget gym, utmarkt for Rolf. 55 demens + somatik. Festsal, bibliotek, verkstad, gastlagenhet, boule, park med grillplats.",
  phone:"08-555 94 777",email:"aldresupport@blomsterfonden.se",
- rent:"Ej publicerad (inkl. hemforsakring, el, TV, bredband)",rentNum:0,
+ rent:"4 322 till 6 708 kr/man",rentNum:4322,food:"3 616 kr/man",
  dog:"Fraga boendet direkt",dogOk:false,
  review:"\"Mycket bra luncher for bara femtio kronor\" (Reco.se). Nominerad till Kundkristallen.",
  sources:[["Blomsterfonden Liseberg","https://www.blomsterfonden.se/vard-omsorg/aldreboende/aldreboenden/lisebergs-aldreboende/"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/blomsterfonden-liseberg"],["Reco.se recension","https://www.reco.se/lisebergs-aldreboende-alvsjo"],["AldrePoer (traning)","https://www.blomsterfonden.se/vard-omsorg/aldreboende/vart-arbetssatt/aldrepower/"]],
@@ -537,7 +564,7 @@ const H=[
  badges:["224 platser","Prisbelonad mat","WHO-certifierat"],bt:["b","g","go"],
  desc:"Stort: 148 demens + 76 somatik. Stiftelse. WHO-certifierat. Arla Guldko-vinnare (mat). OBS: Blandade recensioner, visst missnoje med bemotande. Stort kan kannas opersonligt.",
  phone:"",email:"",
- rent:"Ej publicerad",rentNum:0,
+ rent:"4 795 till 11 458 kr/man",rentNum:4795,food:"3 616 kr/man",
  dog:"Fraga boendet direkt",dogOk:false,
  review:"Blandade. Negativ: \"ovanlig personal och lakare utan nagon kansla for manskligt liv.\" Positivt: prisbelonad mat.",
  sources:[["Danvikshem","https://www.danvikshem.se/"],["Seniorval","https://seniorval.se/aldreboende/nacka"]],
@@ -554,7 +581,7 @@ const H=[
  badges:["Silviahemscertifierat"],bt:["go"],
  desc:"Silviahemscertifierat, 29 lgh. Litet och personligt. Stockholms stad anser att Humana \"arbetar systematiskt med kvalitetsforbaettring.\"",
  phone:"",email:"",
- rent:"Ej publicerad",rentNum:0,
+ rent:"5 742 till 6 042 kr/man",rentNum:5742,food:"3 616 kr/man",
  dog:"Fraga boendet direkt",dogOk:false,
  review:"Inga publicerade recensioner.",
  sources:[["Humana Asengarden","https://www.humana.se/aldreomsorg/hitta-ditt-aldreboende/asengarden-i-hagersten"],["Silviahemmet certifierade enheter","https://www.silviahemmet.se/utbildning/silviahemscertifiering/certifierade-enheter/"]],
@@ -601,8 +628,11 @@ function render(){
   const r=i+1;
   const rc=r<=2?'g':r<=5?'s':'n';
   const sc=h.score>=8.5?'hi':h.score>=7?'mi':'lo';
+  const isFav=favs.has(h.name);
+  const mainLink=h.sources&&h.sources[0]?h.sources[0][1]:'';
   return `<div class="card">
    <div class="rnk ${rc}">#${r}</div>
+   <button class="fav-btn ${isFav?'active':''}" onclick="toggleFav('${h.name.replace(/'/g,"\\'")}')" title="Lagg till i favoriter">${isFav?'&#10084;':'&#9825;'}</button>
    <div class="card-top">
     <div>
      <h3>${h.name}</h3>
@@ -618,7 +648,9 @@ function render(){
     ${h.phone?`<div class="det"><span class="dl">Telefon</span><span class="dv">${h.phone}</span></div>`:''}
     ${h.email?`<div class="det"><span class="dl">E-post</span><span class="dv">${h.email}</span></div>`:''}
     <div class="det"><span class="dl">Hyra</span><span class="dv">${h.rent}</span></div>
+    <div class="det"><span class="dl">Mat</span><span class="dv">${h.food||'3 616 kr/man'}</span></div>
     <div class="det"><span class="dl">Hund</span><span class="dv">${h.dog}</span></div>
+    ${mainLink?`<div class="det"><span class="dl">Las mer</span><span class="dv"><a href="${mainLink}" target="_blank" rel="noopener">Besok hemsida</a></span></div>`:''}
    </div>
    ${h.review?`<div class="review-box">${h.review}</div>`:''}
    <div class="scores-row">
@@ -637,8 +669,45 @@ function render(){
  }).join('');
 }
 
+// Favorites
+let favs=new Set(JSON.parse(localStorage.getItem('rolf-favs')||'[]'));
+
+function saveFavs(){localStorage.setItem('rolf-favs',JSON.stringify([...favs]));}
+
+function toggleFav(name){
+ if(favs.has(name))favs.delete(name);else favs.add(name);
+ saveFavs();render();renderFavs();
+}
+
+function renderFavs(){
+ const panel=document.getElementById('fav-panel');
+ const list=document.getElementById('fav-list');
+ if(favs.size===0){panel.classList.remove('show');return;}
+ panel.classList.add('show');
+ const items=[...favs].map(name=>{
+  const h=H.find(x=>x.name===name);
+  if(!h)return'';
+  return `<li><span class="fl-name">${h.name}</span><span class="fl-meta">${h.areaLabel} / ${h.rent}</span></li>`;
+ }).join('');
+ list.innerHTML=items;
+}
+
+function copyFavs(){
+ const lines=[...favs].map((name,i)=>{
+  const h=H.find(x=>x.name===name);
+  if(!h)return'';
+  return `${i+1}. ${h.name} (${h.areaLabel})`;
+ }).filter(Boolean);
+ const text=`Onskade boenden for Rolf Hallgren:\n\n${lines.join('\n')}\n\nKontakt anhorig: Rose, Larsbergsvagen 27, Lidingo`;
+ navigator.clipboard.writeText(text).then(()=>{
+  const msg=document.getElementById('copied-msg');
+  msg.style.display='inline';
+  setTimeout(()=>msg.style.display='none',2000);
+ });
+}
+
 document.querySelectorAll('.filters select').forEach(el=>el.addEventListener('change',render));
-render();
+render();renderFavs();
 </script>
 </body>
 </html>
