@@ -89,6 +89,8 @@
         .review-box .src{font-style:normal;font-size:.68rem;color:var(--light);margin-top:.2rem}
 
         .travel-row{display:flex;gap:1rem;flex-wrap:wrap;font-size:.76rem;padding:.5rem 0;border-top:1px solid var(--border)}
+        .src-row{padding:.5rem 0 0;border-top:1px solid var(--border);font-size:.68rem;line-height:1.8;color:var(--light)}
+        .src-row a{color:var(--light);text-decoration:underline;text-decoration-color:var(--border)}.src-row a:hover{color:var(--accent)}
         .tr{color:var(--mid)}.tr strong{color:var(--dark)}.tr .rt{color:var(--light);font-size:.68rem}
 
         .info{background:var(--bg);border-left:3px solid var(--border);padding:.9rem 1.3rem;margin:1rem 0;border-radius:0 6px 6px 0;font-size:.85rem}
@@ -266,6 +268,7 @@ const H=[
  rent:"Ej publicerad (varierar, 23 till 78 kvm)",rentNum:0,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"\"While the place appears good, it destroys all that is fine remaining in life\" (Patientguiden, 1 recension, 1/5). OBS: enstaka recension, kanske inte representativ. 88% nojdhet i Socialstyrelsens undersokning.",
+ sources:[["Borgerskapet: Ansok om plats","https://www.borgerskapet.se/vard-och-omsorg/ansok-om-plats-pa-vard-och-omsorgsboende/"],["Borgerskapet: Vad kostar","https://www.borgerskapet.se/vard-och-omsorg/vad-kostar-omsorgsboende/"],["Borgerskapet: FAQ (medlemskap)","https://www.borgerskapet.se/fragor-och-svar/"],["Patientguiden: recension","https://www.patientguiden.se/vardgivare/230292-borgerskapets-aldrehem"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/borgerskapets-vard-och-omsorgsboende"]],
  dementia:10,physical:9,reviews:7,profile:10,
  tRose:35,tRoseR:"Lidingobanan, T14 Ropsten, T13/14 Slussen, buss till Hogalid",
  tRolf:30,tRolfR:"T11 Tensta, T-centralen, T13/14 Hornstull + promenad"
@@ -282,6 +285,7 @@ const H=[
  rent:"7 700 till 11 200 kr/man",rentNum:7700,
  dog:"Fraga verksamhetschef Daniel Ekman",dogOk:false,
  review:"\"Sa har efter en vecka daligt. Maten under all kritik.\" (Hitta.se, 1 recension). MEN Socialstyrelsen ger 4.8 till 4.9 av 5, bland landets hogsta.",
+ sources:[["Attendo Langbroberg (Seniorval)","https://seniorval.se/aldreboende/stockholm/attendo-langbroberg-alvsjo"],["Attendo Spadvagen (Attendo)","https://www.attendo.se/aldreboende/hitta-aldreboende/stockholm/alvsjo/spadvagen/"],["Attendo: Vad kostar","https://www.attendo.se/aldreboende/vad-kostar-aldreboende/"],["Pressmeddelande: Sveriges basta","https://news.cision.com/se/attendo-pressmeddelanden/r/attendo-langbroberg-ett-av-sveriges-basta-aldreboenden,c9177015"]],
  dementia:8,physical:10,reviews:9,profile:9,
  tRose:40,tRoseR:"Lidingobanan, Ropsten, pendeltag via Stockholms sodra till Alvsjo + buss",
  tRolf:35,tRolfR:"T11 Tensta, T-centralen, pendeltag Alvsjo + buss"
@@ -298,6 +302,7 @@ const H=[
  rent:"Ej publicerad (kontakta boendet)",rentNum:0,
  dog:"Terapihund Scooby besoker 2 ggr/vecka. Fraga om eget hundbesok.",dogOk:true,
  review:"Socialstyrelsens undersokning: boende och anhoriga ar \"positiva och nojda\". Vard och trygghet far hogst betyg.",
+ sources:[["Vallgossen (Stockholms Sjukhem)","https://stockholmssjukhem.se/aldreboenden/vara-aldreboenden/kungsholmen-vallgossen/"],["Vallgossen demensenheter","https://stockholmssjukhem.se/aldreboenden/vara-aldreboenden/kungsholmen-vallgossen/demensenheter/"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/vallgossen"],["Vad tycker de aldre 2023","https://stockholmssjukhem.se/aktuellt/nyheter/2023/vad-tycker-de-aldre-om-vallgossen-och-hornskroken-2023/"]],
  dementia:9,physical:9,reviews:9,profile:10,
  tRose:30,tRoseR:"Lidingobanan, T14 Ropsten, T13/14 Fridhemsplan",
  tRolf:25,tRolfR:"T11 Tensta, T-centralen, T13 Fridhemsplan"
@@ -314,6 +319,7 @@ const H=[
  rent:"Ej publicerad (baserat pa storlek)",rentNum:0,
  dog:"JA, Ersta valkomnar hundar! Hund ska vara rumsren och inte aggressiv. Anhoriga ansvarar.",dogOk:true,
  review:"\"Fantastiskt stalle\" med \"super harlig personal som brinner for det de gor, alltid glada och trevliga\" och \"manga trevliga aktiviteter, hembakt fika, fint dukat\". 3.7/5 pa Hitta.se (3 recensioner).",
+ sources:[["Ersta Lydiahemmet","https://www.erstadiakoni.se/lydiahemmet"],["Ersta husdjurspolicy","https://www.erstadiakoni.se/verksamheter/aldreomsorg/aldreboenden/vara-aldreboenden/var-husdjurspolicy/"],["Ersta kostnader","https://www.erstadiakoni.se/verksamheter/aldreomsorg/aldreboenden/att-bo-hos-oss/kostnader-for-att-bo-pa-aldreboende/"],["Hitta.se recensioner","https://www.hitta.se/ersta+lydiahemmet/farsta/fccgtfkcm"],["Nominering Arets byggnad","https://www.erstadiakoni.se/om-ersta/artiklar/artikelarkiv/lydiahemmet-nominerat-till-arets-vard--och-omsorgsbyggnad/"]],
  dementia:9,physical:9,reviews:8,profile:9,
  tRose:50,tRoseR:"Lidingobanan, Ropsten, T13 Gamla stan, T18/19 Farsta strand",
  tRolf:40,tRolfR:"T11 Tensta, T-centralen, T18/19 Farsta strand"
@@ -330,6 +336,7 @@ const H=[
  rent:"Ej publicerad (kontakta Lidingo kommun)",rentNum:0,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"5.0/5 pa Patientguiden (1 recension). Beskrivet som \"modernt och valkomnande\" med \"skoena och stilfulla mobler\".",
+ sources:[["Hogsatra (Seniorval)","https://seniorval.se/aldreboende/lidingo/hogsatra-aldreboende-"],["Hogsatra (Lidingo stad)","https://lidingo.se/toppmeny/omsorgstod/aldreomsorg/boendeforaldre/hogsatravardochomsorgsboende.4.6781146e15ca95855176777.html"],["Patientguiden: recension","https://www.patientguiden.se/vardgivare/238897-hogsatra-vard-och-omsorgsboende"]],
  dementia:9,physical:8,reviews:8,profile:8,
  tRose:15,tRoseR:"Buss 201/204 fran Larsberg",
  tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan/buss"
@@ -346,6 +353,7 @@ const H=[
  rent:"Ej publicerad (baserat pa storlek)",rentNum:0,
  dog:"JA, Ersta valkomnar hundar! Samma policy som Lydiahemmet.",dogOk:true,
  review:"5.0/5 pa Hitta.se (1 recension). Vacker innergard for fika och tradgardsaktiviteter.",
+ sources:[["Ersta Mariahemmet","https://www.erstadiakoni.se/verksamheter/aldreomsorg/aldreboenden/vara-aldreboenden/mariahemmet/"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/ersta-mariahemmet"],["Stjarnmarkt certifiering","https://www.erstadiakoni.se/om-ersta/artiklar/artikelarkiv/mariahemmet-ar-nu-ett-stjarnmarkt-aldreboende2/"],["Ersta husdjurspolicy","https://www.erstadiakoni.se/verksamheter/aldreomsorg/aldreboenden/vara-aldreboenden/var-husdjurspolicy/"]],
  dementia:10,physical:8,reviews:8,profile:9,
  tRose:40,tRoseR:"Lidingobanan, Ropsten, T13 Gamla stan, T17 Sandsborg",
  tRolf:30,tRolfR:"T11 Tensta, T-centralen, T17 Sandsborg"
@@ -362,6 +370,7 @@ const H=[
  rent:"6 084 till 6 582 kr/man",rentNum:6084,
  dog:"Kommunalt, anhoriga far generellt ta med hund vid besok. Fraga personalen.",dogOk:true,
  review:"Gott rykte for matkvalitet (kocklagad, dietistberaknad, KRAV-certifierad).",
+ sources:[["Katarinagarden (Stockholms stad)","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/katarinagardens-vard-och-omsorgsboende"],["Katarinagarden (Seniorval)","https://seniorval.se/aldreboende/stockholm/katarinagardens-vard-och-omsorgsboende-sodermalm"],["Silviahemscertifiering","https://www.silviahemmet.se/2025/katarinagarden-pa-sodermalm-certifierad/"]],
  dementia:8,physical:8,reviews:8,profile:8,
  tRose:35,tRoseR:"Lidingobanan, Ropsten, T13 Medborgarplatsen + promenad",
  tRolf:30,tRolfR:"T11 Tensta, T-centralen, T13 Medborgarplatsen + promenad"
@@ -378,6 +387,7 @@ const H=[
  rent:"6 833 till 7 599 kr/man",rentNum:6833,
  dog:"Kommunalt, anhoriga far generellt ta med hund vid besok. Fraga personalen.",dogOk:true,
  review:"Inga publicerade recensioner. Kvalitetsutmarkelse fran Stockholms stad.",
+ sources:[["Nytorgsgarden (Stockholms stad)","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/nytorgsgardens-vard-och-omsorgsboende"],["Nytorgsgarden (Seniorval)","https://seniorval.se/aldreboende/stockholm/nytorgsgardens-vard-och-omsorgsboende-sodermalm"]],
  dementia:10,physical:8,reviews:7,profile:9,
  tRose:35,tRoseR:"Lidingobanan, Ropsten, T13 Medborgarplatsen + promenad",
  tRolf:30,tRolfR:"T11 Tensta, T-centralen, T13 Medborgarplatsen + promenad"
@@ -394,6 +404,7 @@ const H=[
  rent:"9 250 kr/man (inkl. internet)",rentNum:9250,
  dog:"Fraga verksamhetschef Caroline Ostberg",dogOk:false,
  review:"86.7% nojdhet i Socialstyrelsens undersokning. Inga individuella recensioner hittade.",
+ sources:[["Attendo Nilstorpsgarden","https://www.attendo.se/aldreboende/hitta-aldreboende/stockholm/lidingo/nilstorpsgarden/"],["Pressmeddelande: Bast pa Lidingo","https://www.mynewsdesk.com/se/attendo/pressreleases/attendo-nilstorp-baest-paa-lidingoe-882806"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/attendo-nilstorpsgarden"]],
  dementia:8,physical:8,reviews:9,profile:7,
  tRose:15,tRoseR:"Buss 201/204 eller Lidingobanan",
  tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan/buss"
@@ -410,6 +421,7 @@ const H=[
  rent:"9 445 till 11 132 kr/man",rentNum:9445,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"Inga publicerade recensioner. Kvalitetsbedomning 2025: \"goda forutsattningar for fortsatt trygg och meningsfull vard.\"",
+ sources:[["Bracke Hornstull","https://brackediakoni.se/bracke-vard-och-omsorgsboende-hornstull/"],["Bracke Hornstull (Seniorval)","https://seniorval.se/aldreboende/stockholm/bracke-vard-och-omsorgsboende-hornstull-sodermalm"],["Bracke kontakt","https://brackediakoni.se/bracke-aldreomsorg-stockholm/kontakta-oss/"]],
  dementia:9,physical:8,reviews:7,profile:9,
  tRose:35,tRoseR:"Lidingobanan, Ropsten, T13/14 Hornstull",
  tRolf:25,tRolfR:"T11 Tensta, T-centralen, T13/14 Hornstull"
@@ -426,6 +438,7 @@ const H=[
  rent:"Ej publicerad (kontakta boendet)",rentNum:0,
  dog:"Fraga verksamhetschef Camilla Falkbrink",dogOk:false,
  review:"4.3/5 pa Stanplats (6 recensioner). \"Fantastiskt aldreboende, underbar personal, otroligt nojd.\" Men aven: \"Inte en sarskilt bra plats for personer med demens.\"",
+ sources:[["Humana Sjostadsgarden","https://www.humana.se/aldreomsorg/hitta-ditt-aldreboende/sjostadsgarden-i-stockholm"],["Stanplats: recensioner","https://stanplats.se/foretag/humana-sjostadsgarden-sodermalm/"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/humana-sjostadsgarden"]],
  dementia:9,physical:8,reviews:7,profile:8,
  tRose:35,tRoseR:"Lidingobanan, Ropsten, T13 Slussen, buss 74 Sjostaden",
  tRolf:35,tRolfR:"T11 Tensta, T-centralen, buss/tvarbana Sjostaden"
@@ -442,6 +455,7 @@ const H=[
  rent:"Ej publicerad (inkl. hemforsakring, el, TV, bredband)",rentNum:0,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"\"Mycket bra luncher for bara femtio kronor\" (Reco.se). Nominerad till Kundkristallen.",
+ sources:[["Blomsterfonden Liseberg","https://www.blomsterfonden.se/vard-omsorg/aldreboende/aldreboenden/lisebergs-aldreboende/"],["Stockholms stad","https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/vard-och-omsorgsboende/blomsterfonden-liseberg"],["Reco.se recension","https://www.reco.se/lisebergs-aldreboende-alvsjo"],["AldrePoer (traning)","https://www.blomsterfonden.se/vard-omsorg/aldreboende/vart-arbetssatt/aldrepower/"]],
  dementia:8,physical:9,reviews:7,profile:8,
  tRose:40,tRoseR:"Lidingobanan, Ropsten, pendeltag Alvsjo + buss",
  tRolf:35,tRolfR:"T11 Tensta, T-centralen, pendeltag Alvsjo + buss"
@@ -458,6 +472,7 @@ const H=[
  rent:"Ej publicerad",rentNum:0,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"Inga publicerade recensioner funna.",
+ sources:[["Vardaga Silverhoejden","https://vardaga.se/verksamheter/silverhojden/"],["Seniorval","https://seniorval.se/aldreboende/lidingo"]],
  dementia:8,physical:7,reviews:6,profile:7,
  tRose:20,tRoseR:"Buss 201/204 eller Lidingobanan",
  tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan/buss"
@@ -474,6 +489,7 @@ const H=[
  rent:"Ej publicerad",rentNum:0,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"En recension med oro over kvallsvarden. Begraensat underlag.",
+ sources:[["Vardaga Villa Dalenum","https://vardaga.se/verksamheter/villa-dalenum/"],["Seniorval","https://seniorval.se/aldreboende/lidingo"]],
  dementia:8,physical:7,reviews:6,profile:8,
  tRose:12,tRoseR:"Buss/Lidingobanan kort resa",
  tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan"
@@ -490,6 +506,7 @@ const H=[
  rent:"Ej publicerad",rentNum:0,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"Inga publicerade recensioner.",
+ sources:[["Siggebogarden (Lidingo stad)","https://lidingo.se/toppmeny/omsorgstod/aldreomsorg/boendeforaldre.4.3d1e5816979fc250c8820.html"],["Silviahemmet certifierade enheter","https://www.silviahemmet.se/utbildning/silviahemscertifiering/certifierade-enheter/"]],
  dementia:9,physical:7,reviews:6,profile:7,
  tRose:15,tRoseR:"Buss/Lidingobanan",
  tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan/buss"
@@ -506,6 +523,7 @@ const H=[
  rent:"Ej publicerad",rentNum:0,
  dog:"Djur- och naturprofil, troligen valkomnande. Fraga boendet.",dogOk:true,
  review:"100% nojdhet i Socialstyrelsens undersokning 2024.",
+ sources:[["Forenade Care Tryggheten","https://www.forenedecare.se/aldreboende/tryggheten/"],["Socialstyrelsen oppna jamforelser","https://www.socialstyrelsen.se/statistik-och-data/oppna-jamforelser/socialtjanst/aldreomsorg/"]],
  dementia:6,physical:8,reviews:10,profile:7,
  tRose:40,tRoseR:"Lidingobanan, Ropsten, T13, byte T11 Bergshamra",
  tRolf:25,tRolfR:"T11 Tensta, T11 Bergshamra"
@@ -522,6 +540,7 @@ const H=[
  rent:"Ej publicerad",rentNum:0,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"Blandade. Negativ: \"ovanlig personal och lakare utan nagon kansla for manskligt liv.\" Positivt: prisbelonad mat.",
+ sources:[["Danvikshem","https://www.danvikshem.se/"],["Seniorval","https://seniorval.se/aldreboende/nacka"]],
  dementia:7,physical:7,reviews:5,profile:7,
  tRose:30,tRoseR:"Lidingobanan, Ropsten, buss 443 Finnboda",
  tRolf:40,tRolfR:"T11 Tensta, T-centralen, T13 Slussen, buss 443"
@@ -538,6 +557,7 @@ const H=[
  rent:"Ej publicerad",rentNum:0,
  dog:"Fraga boendet direkt",dogOk:false,
  review:"Inga publicerade recensioner.",
+ sources:[["Humana Asengarden","https://www.humana.se/aldreomsorg/hitta-ditt-aldreboende/asengarden-i-hagersten"],["Silviahemmet certifierade enheter","https://www.silviahemmet.se/utbildning/silviahemscertifiering/certifierade-enheter/"]],
  dementia:9,physical:7,reviews:6,profile:7,
  tRose:45,tRoseR:"Lidingobanan, Ropsten, T13/14, buss till Hagersten",
  tRolf:30,tRolfR:"T11 Tensta, T-centralen, T14, buss Hagersten"
@@ -612,6 +632,7 @@ function render(){
     <div class="tr">Rose: <strong>ca ${h.tRose} min</strong> <span class="rt">${h.tRoseR}</span></div>
     <div class="tr">Rolf: <strong>ca ${h.tRolf} min</strong> <span class="rt">${h.tRolfR}</span></div>
    </div>
+   ${h.sources?`<div class="src-row">${h.sources.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join(' · ')}</div>`:''}
   </div>`;
  }).join('');
 }
