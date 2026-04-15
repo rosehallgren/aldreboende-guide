@@ -3,719 +3,621 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Äldreboende för Rolf — Stockholm</title>
+    <title>Äldreboende for Rolf</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         :root{
-            --black:#1a1a1a;--dark:#333;--mid:#555;--light:#999;--faint:#bbb;
-            --border:#e5e5e5;--bg:#f7f7f7;--white:#fff;
+            --black:#1a1a1a;--dark:#333;--mid:#555;--light:#888;--faint:#bbb;
+            --border:#e0e0e0;--bg:#f7f7f7;--white:#fff;
             --accent:#2c5282;--accent-light:#ebf4ff;
             --green:#276749;--green-light:#f0fff4;
             --warm:#744210;--warm-light:#fffff0;
-            --gold:#b7791f;--silver:#718096;--bronze:#9c4221;
+            --gold:#b7791f;--silver:#718096;
         }
         html{font-size:16px;scroll-behavior:smooth}
         body{font-family:'Inter',system-ui,sans-serif;color:var(--black);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+        .wrap{max-width:880px;margin:0 auto;padding:0 1.5rem}
 
-        /* Layout */
-        .container{max-width:920px;margin:0 auto;padding:0 1.5rem}
-
-        /* Nav */
-        nav{position:sticky;top:0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;padding:.7rem 0}
-        nav .container{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-        nav .logo{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;color:var(--black);text-decoration:none}
-        nav .links{display:flex;gap:1.3rem;flex-wrap:wrap}
-        nav .links a{color:var(--mid);text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.02em}
+        nav{position:sticky;top:0;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;padding:.65rem 0}
+        nav .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.4rem}
+        nav .logo{font-family:'Lora',serif;font-weight:600;font-size:1rem;color:var(--black);text-decoration:none}
+        nav .links{display:flex;gap:1.2rem;flex-wrap:wrap}
+        nav .links a{color:var(--mid);text-decoration:none;font-size:.76rem;font-weight:500;letter-spacing:.02em}
         nav .links a:hover{color:var(--black)}
 
-        /* Hero */
-        .hero{padding:4rem 0 2rem}
-        .hero h1{font-family:'Lora',serif;font-size:2.4rem;font-weight:600;line-height:1.2;margin-bottom:.8rem}
-        .hero .sub{font-size:1.05rem;color:var(--mid);max-width:600px;font-weight:300;line-height:1.6}
-        .hero .date{margin-top:.8rem;font-size:.75rem;color:var(--light)}
+        .hero{padding:3.5rem 0 1.5rem}
+        .hero h1{font-family:'Lora',serif;font-size:2.2rem;font-weight:600;line-height:1.2;margin-bottom:.6rem}
+        .hero .sub{font-size:1rem;color:var(--mid);max-width:580px;font-weight:300}
+        .hero .date{margin-top:.6rem;font-size:.72rem;color:var(--light)}
 
-        /* Profile */
-        .profile{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1.5rem 2rem;margin:1.5rem 0 2.5rem;display:flex;gap:2.5rem;flex-wrap:wrap}
-        .profile .col h4{font-family:'Lora',serif;font-size:.9rem;font-weight:600;margin-bottom:.5rem}
-        .profile .col p{font-size:.82rem;color:var(--mid);margin-bottom:.2rem}
+        .profile{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1.3rem 1.8rem;margin:1rem 0 2rem;display:flex;gap:2rem;flex-wrap:wrap;font-size:.84rem}
+        .profile .col h4{font-family:'Lora',serif;font-size:.88rem;font-weight:600;margin-bottom:.4rem}
+        .profile .col p{color:var(--mid);margin-bottom:.15rem}
         .profile strong{color:var(--dark)}
-        .tag{display:inline-block;font-size:.68rem;font-weight:600;padding:.15rem .55rem;border-radius:4px;margin-right:.3rem}
-        .tag.dem{background:#fed7e2;color:#97266d}
-        .tag.mob{background:#fefcbf;color:#975a16}
-        .tag.str{background:#e9d8fd;color:#553c9a}
+        .tag{display:inline-block;font-size:.66rem;font-weight:600;padding:.15rem .5rem;border-radius:4px;margin-right:.25rem}
+        .tag.dem{background:#fed7e2;color:#97266d}.tag.mob{background:#fefcbf;color:#975a16}.tag.str{background:#e9d8fd;color:#553c9a}
 
-        /* Section */
-        section{margin-bottom:3.5rem}
-        h2{font-family:'Lora',serif;font-size:1.6rem;font-weight:600;margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:2px solid var(--black)}
-        h3{font-family:'Lora',serif;font-size:1.15rem;font-weight:500;margin:2rem 0 .8rem}
-        p{margin-bottom:1rem;color:var(--dark)}
+        main{padding-bottom:4rem}
+        section{margin-bottom:3rem}
+        h2{font-family:'Lora',serif;font-size:1.5rem;font-weight:600;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--black)}
+        h3{font-family:'Lora',serif;font-size:1.1rem;font-weight:500;margin:1.8rem 0 .6rem}
+        p{margin-bottom:.9rem;color:var(--dark)}
         a{color:var(--accent);text-underline-offset:2px}
 
-        /* Filters */
-        .filters{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1.2rem 1.5rem;margin-bottom:2rem}
-        .filters h3{margin:0 0 .8rem;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--light);font-family:'Inter',sans-serif;font-weight:600}
-        .filter-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center}
-        .filter-group{display:flex;flex-direction:column;gap:.3rem}
-        .filter-group label{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--light)}
-        .filter-group select,.filter-group input{font-family:'Inter',sans-serif;font-size:.82rem;padding:.4rem .6rem;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--dark);min-width:140px}
-        .filter-group select:focus,.filter-group input:focus{outline:none;border-color:var(--accent)}
-        .sort-btn{font-family:'Inter',sans-serif;font-size:.75rem;padding:.4rem .8rem;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--mid);cursor:pointer;font-weight:500}
-        .sort-btn:hover,.sort-btn.active{background:var(--black);color:var(--white);border-color:var(--black)}
-        .result-count{font-size:.78rem;color:var(--light);margin:.8rem 0}
+        .filters{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:1rem 1.3rem;margin-bottom:1.5rem}
+        .filters-title{font-size:.75rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--light);margin-bottom:.6rem}
+        .filter-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:end}
+        .fg{display:flex;flex-direction:column;gap:.2rem}
+        .fg label{font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--light)}
+        .fg select{font-family:'Inter',sans-serif;font-size:.8rem;padding:.35rem .5rem;border:1px solid var(--border);border-radius:6px;background:var(--white);color:var(--dark);min-width:130px}
+        .fg select:focus{outline:none;border-color:var(--accent)}
+        .result-count{font-size:.74rem;color:var(--light);margin:.6rem 0}
 
-        /* Cards */
-        .card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.5rem 1.8rem;margin-bottom:1.2rem;transition:box-shadow .2s;position:relative}
-        .card:hover{box-shadow:0 3px 16px rgba(0,0,0,.06)}
-        .card .rank-badge{position:absolute;top:-10px;left:16px;font-size:.7rem;font-weight:700;padding:.2rem .7rem;border-radius:16px;color:#fff;letter-spacing:.02em}
-        .rank-badge.r1{background:var(--gold)}.rank-badge.r2{background:var(--gold)}.rank-badge.r3{background:var(--silver)}
-        .rank-badge.r4,.rank-badge.r5{background:var(--silver)}.rank-badge.rn{background:#a0aec0}
+        .card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.4rem 1.6rem;margin-bottom:1rem;transition:box-shadow .2s;position:relative}
+        .card:hover{box-shadow:0 3px 16px rgba(0,0,0,.05)}
+        .card .rnk{position:absolute;top:-9px;left:14px;font-size:.67rem;font-weight:700;padding:.18rem .6rem;border-radius:14px;color:#fff;letter-spacing:.02em}
+        .rnk.g{background:var(--gold)}.rnk.s{background:var(--silver)}.rnk.n{background:#a0aec0}
 
-        .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.6rem}
-        .card h3{margin:0;font-size:1.1rem;line-height:1.3}
-        .score-circle{text-align:center;min-width:56px;flex-shrink:0}
-        .score-circle .num{font-family:'Lora',serif;font-size:1.7rem;font-weight:600;line-height:1}
-        .score-circle .of{font-size:.65rem;color:var(--light)}
-        .score-circle.high .num{color:var(--green)}
-        .score-circle.med .num{color:var(--warm)}
-        .score-circle.low .num{color:#c53030}
+        .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:.8rem;margin-bottom:.5rem}
+        .card h3{margin:0;font-size:1.05rem;line-height:1.3}
+        .sc{text-align:center;min-width:50px;flex-shrink:0}
+        .sc .num{font-family:'Lora',serif;font-size:1.6rem;font-weight:600;line-height:1}
+        .sc .of{font-size:.6rem;color:var(--light)}
+        .sc.hi .num{color:var(--green)}.sc.mi .num{color:var(--warm)}.sc.lo .num{color:#c53030}
 
-        .badges{display:flex;flex-wrap:wrap;gap:.3rem;margin:.4rem 0}
-        .badge{font-size:.65rem;font-weight:600;padding:.15rem .5rem;border-radius:14px;text-transform:uppercase;letter-spacing:.03em}
-        .badge.g{background:var(--green-light);color:var(--green)}
-        .badge.b{background:var(--accent-light);color:var(--accent)}
-        .badge.w{background:var(--warm-light);color:var(--warm)}
-        .badge.go{background:#fffff0;color:var(--gold);border:1px solid #ecc94b}
+        .badges{display:flex;flex-wrap:wrap;gap:.25rem;margin:.3rem 0}
+        .bd{font-size:.62rem;font-weight:600;padding:.14rem .45rem;border-radius:12px;text-transform:uppercase;letter-spacing:.03em}
+        .bd.g{background:var(--green-light);color:var(--green)}.bd.b{background:var(--accent-light);color:var(--accent)}.bd.w{background:var(--warm-light);color:var(--warm)}.bd.go{background:#fffff0;color:var(--gold);border:1px solid #ecc94b}
 
-        .meta{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.78rem;color:var(--light);margin:.5rem 0}
-        .meta span::before{content:'·';margin-right:.4rem}
-        .meta span:first-child::before{content:''}
+        .meta{display:flex;flex-wrap:wrap;gap:1rem;font-size:.76rem;color:var(--light);margin:.4rem 0}
+        .meta span::before{content:'·';margin-right:.35rem}.meta span:first-child::before{content:''}
 
-        .desc{font-size:.85rem;color:var(--dark);line-height:1.6;margin:.6rem 0}
+        .desc{font-size:.84rem;color:var(--dark);line-height:1.6;margin:.5rem 0}
 
-        .scores-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.3rem;margin:.8rem 0;padding:.8rem 0;border-top:1px solid var(--border)}
-        .sc-item{text-align:center;padding:.3rem}
-        .sc-item .sc-v{font-family:'Lora',serif;font-size:1rem;font-weight:600;color:var(--dark)}
-        .sc-item .sc-l{font-size:.6rem;text-transform:uppercase;letter-spacing:.04em;color:var(--faint);font-weight:600}
+        .details-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem .8rem;margin:.6rem 0;padding:.6rem 0;border-top:1px solid var(--border);font-size:.78rem}
+        .det{display:flex;gap:.3rem}.det .dl{color:var(--light);min-width:60px;font-weight:500}.det .dv{color:var(--dark)}
 
-        .travel{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.78rem;padding:.6rem 0;border-top:1px solid var(--border)}
-        .travel .t{color:var(--mid)}
-        .travel strong{color:var(--dark)}
-        .travel .route{color:var(--light);font-size:.72rem}
+        .scores-row{display:flex;flex-wrap:wrap;gap:.3rem;margin:.5rem 0;padding:.5rem 0;border-top:1px solid var(--border)}
+        .si{text-align:center;flex:1;min-width:60px;padding:.2rem}
+        .si .sv{font-family:'Lora',serif;font-size:.95rem;font-weight:600;color:var(--dark)}
+        .si .sl{font-size:.58rem;text-transform:uppercase;letter-spacing:.04em;color:var(--faint);font-weight:600}
 
-        /* Info box */
-        .info{background:var(--bg);border-left:3px solid var(--border);padding:1rem 1.5rem;margin:1.2rem 0;border-radius:0 8px 8px 0;font-size:.88rem}
+        .review-box{background:var(--bg);border-radius:6px;padding:.6rem .8rem;margin:.4rem 0;font-size:.78rem;color:var(--mid);font-style:italic;line-height:1.5}
+        .review-box .src{font-style:normal;font-size:.68rem;color:var(--light);margin-top:.2rem}
+
+        .travel-row{display:flex;gap:1rem;flex-wrap:wrap;font-size:.76rem;padding:.5rem 0;border-top:1px solid var(--border)}
+        .tr{color:var(--mid)}.tr strong{color:var(--dark)}.tr .rt{color:var(--light);font-size:.68rem}
+
+        .info{background:var(--bg);border-left:3px solid var(--border);padding:.9rem 1.3rem;margin:1rem 0;border-radius:0 6px 6px 0;font-size:.85rem}
         .info.blue{background:var(--accent-light);border-color:var(--accent)}
         .info.green{background:var(--green-light);border-color:var(--green)}
         .info.warm{background:var(--warm-light);border-color:var(--warm)}
         .info p:last-child{margin-bottom:0}
 
-        /* Steps */
         .steps{counter-reset:s;list-style:none}
-        .steps li{counter-increment:s;padding:1.2rem 0 1.2rem 3.5rem;position:relative;border-bottom:1px solid var(--border);font-size:.88rem}
+        .steps li{counter-increment:s;padding:1rem 0 1rem 3.2rem;position:relative;border-bottom:1px solid var(--border);font-size:.85rem}
         .steps li:last-child{border-bottom:none}
-        .steps li::before{content:counter(s);position:absolute;left:0;top:1.2rem;width:2rem;height:2rem;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.8rem}
-        .steps li strong{display:block;margin-bottom:.2rem;color:var(--black)}
+        .steps li::before{content:counter(s);position:absolute;left:0;top:1rem;width:1.8rem;height:1.8rem;background:var(--black);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:.75rem}
+        .steps li strong{display:block;margin-bottom:.15rem}
 
-        /* Checklist */
-        .check{list-style:none}
-        .check li{padding:.4rem 0 .4rem 1.8rem;position:relative;font-size:.85rem;color:var(--dark)}
-        .check li::before{content:'';position:absolute;left:0;top:.6rem;width:12px;height:12px;border:2px solid var(--border);border-radius:3px}
+        .check{list-style:none}.check li{padding:.35rem 0 .35rem 1.6rem;position:relative;font-size:.83rem;color:var(--dark)}
+        .check li::before{content:'';position:absolute;left:0;top:.55rem;width:11px;height:11px;border:2px solid var(--border);border-radius:3px}
 
-        /* Contact */
-        .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.8rem;margin:1rem 0}
-        .ccard{background:var(--bg);border-radius:8px;padding:1rem 1.2rem;border:1px solid var(--border)}
-        .ccard .cl{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--light);margin-bottom:.2rem}
-        .ccard .cv{font-size:1rem;font-weight:500}
-        .ccard .cd{font-size:.78rem;color:var(--mid);margin-top:.1rem}
+        .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.7rem;margin:.8rem 0}
+        .cc{background:var(--bg);border-radius:7px;padding:.9rem 1rem;border:1px solid var(--border)}
+        .cc .cl{font-size:.66rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--light);margin-bottom:.15rem}
+        .cc .cv{font-size:.95rem;font-weight:500}.cc .cd{font-size:.76rem;color:var(--mid);margin-top:.1rem}
 
-        /* Cost */
-        .costs{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.2rem 0}
-        .cost-box{text-align:center;padding:1.3rem .8rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
-        .cost-box .ca{font-family:'Lora',serif;font-size:1.4rem;font-weight:600}
-        .cost-box .ct{font-size:.75rem;color:var(--mid)}
-        .cost-box .cx{font-size:.68rem;color:var(--light);margin-top:.2rem}
+        .costs{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin:1rem 0}
+        .cb{text-align:center;padding:1.2rem .7rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+        .cb .ca{font-family:'Lora',serif;font-size:1.3rem;font-weight:600}.cb .ct{font-size:.74rem;color:var(--mid)}.cb .cx{font-size:.66rem;color:var(--light);margin-top:.15rem}
 
-        /* Table */
-        .tw{overflow-x:auto;margin:1rem 0;border-radius:8px;border:1px solid var(--border)}
-        table{width:100%;border-collapse:collapse;font-size:.82rem}
-        thead{background:var(--bg)}
-        th{text-align:left;padding:.7rem .8rem;font-weight:600;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--light);border-bottom:2px solid var(--border)}
-        td{padding:.7rem .8rem;border-bottom:1px solid var(--border);vertical-align:top}
-        tr:last-child td{border-bottom:none}
-        tr:hover{background:var(--bg)}
-
-        footer{padding:2.5rem 0;border-top:1px solid var(--border);font-size:.75rem;color:var(--light);text-align:center;margin-top:2rem}
+        footer{padding:2rem 0;border-top:1px solid var(--border);font-size:.72rem;color:var(--light);text-align:center;margin-top:1.5rem}
 
         @media(max-width:640px){
-            html{font-size:14px}
-            .hero h1{font-size:1.8rem}
-            .profile{padding:1.2rem;gap:1.2rem}
-            .scores-grid{grid-template-columns:repeat(3,1fr)}
-            .costs{grid-template-columns:1fr}
-            .filter-row{flex-direction:column;align-items:stretch}
-            .filter-group select,.filter-group input{min-width:auto;width:100%}
+            html{font-size:14px}.hero h1{font-size:1.7rem}.profile{padding:1rem;gap:1rem}
+            .scores-row{gap:.15rem}.si{min-width:50px}.costs{grid-template-columns:1fr}
+            .filter-row{flex-direction:column;align-items:stretch}.fg select{min-width:auto;width:100%}
+            .details-grid{grid-template-columns:1fr}
         }
-        @media print{nav{display:none}.hero{padding-top:1.5rem}.card{break-inside:avoid}}
-
-        /* Hidden */
-        .hidden{display:none!important}
+        @media print{nav{display:none}.hero{padding-top:1rem}.card{break-inside:avoid}}
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="container">
-        <a href="#" class="logo">Rolf's Guide</a>
-        <div class="links">
-            <a href="#boenden">Boenden</a>
-            <a href="#process">Process</a>
-            <a href="#kostnader">Kostnader</a>
-            <a href="#checklista">Checklista</a>
-            <a href="#kontakt">Kontakt</a>
-        </div>
+<nav><div class="wrap">
+    <a href="#" class="logo">Rolf's Guide</a>
+    <div class="links">
+        <a href="#boenden">Boenden</a>
+        <a href="#process">Process</a>
+        <a href="#kostnader">Kostnader</a>
+        <a href="#checklista">Checklista</a>
+        <a href="#kontakt">Kontakt</a>
     </div>
-</nav>
+</div></nav>
 
-<div class="container">
+<div class="wrap">
 
 <div class="hero">
-    <h1>Hitta rätt äldreboende för Rolf</h1>
-    <p class="sub">Vård- och omsorgsboenden i Stockholm, rankade och filtrerbara efter Rolfs specifika behov.</p>
+    <h1>Hitta ratt aldreboende for Rolf</h1>
+    <p class="sub">Vard- och omsorgsboenden i Stockholm, rankade efter Rolfs behov. Filtrera, jamfor och valj.</p>
     <p class="date">Uppdaterad 15 april 2026</p>
 </div>
 
 <div class="profile">
     <div class="col">
-        <h4>Rolf Hallgren, 84 år</h4>
-        <p><span class="tag dem">Vaskulär demens</span><span class="tag mob">Amputerat ben</span><span class="tag str">Stroke</span></p>
-        <p style="margin-top:.4rem">Kraftigt försämrat allmäntillstånd. Behöver hjälp dygnet runt — personlig omvårdnad, medicinering, förflyttning säng/rullstol.</p>
+        <h4>Rolf Hallgren, 84 ar</h4>
+        <p><span class="tag dem">Vaskular demens</span><span class="tag mob">Amputerat ben</span><span class="tag str">Stroke</span></p>
+        <p style="margin-top:.3rem">Behover hjalp dygnet runt. Rullstolsburen. Kraftigt forsamrat allmantillstand, okad fallrisk, flertal sjukhusvistelser.</p>
     </div>
     <div class="col">
-        <h4>Avstånd räknas från</h4>
-        <p><strong>Rose:</strong> Larsbergsvägen 27, Lidingö</p>
-        <p><strong>Rolf:</strong> Stora Tenstagränd, Tensta</p>
-        <p style="font-size:.72rem;color:var(--light);margin-top:.3rem">Kollektivtrafik (SL) — vi har ingen bil</p>
+        <h4>Avstand fran</h4>
+        <p><strong>Rose:</strong> Larsbergsvagen 27, Lidingo</p>
+        <p><strong>Rolf:</strong> Stora Tenstagrand, Tensta</p>
+        <p style="font-size:.7rem;color:var(--light);margin-top:.2rem">Kollektivtrafik (SL)</p>
     </div>
 </div>
 
-<!-- ===== BOENDEN ===== -->
+<main>
+
 <section id="boenden">
 <h2>Boenden</h2>
 
 <div class="filters">
-    <h3>Filtrera och sortera</h3>
+    <div class="filters-title">Filtrera</div>
     <div class="filter-row">
-        <div class="filter-group">
-            <label>Område</label>
-            <select id="f-area">
-                <option value="">Alla områden</option>
-                <option value="lidingo">Lidingö</option>
-                <option value="sodermalm">Södermalm</option>
-                <option value="kungsholmen">Kungsholmen</option>
-                <option value="ostermalm">Östermalm</option>
-                <option value="soderort">Söderort (Enskede/Farsta/Älvsjö)</option>
-                <option value="hagersten">Hägersten/Skärholmen</option>
-                <option value="norra">Norra (Solna/Täby)</option>
-                <option value="nacka">Nacka</option>
-            </select>
-        </div>
-        <div class="filter-group">
-            <label>Operatör</label>
-            <select id="f-op">
-                <option value="">Alla</option>
-                <option value="ideell">Stiftelse/Ideell</option>
-                <option value="kommun">Kommunal</option>
-                <option value="privat">Privat</option>
-            </select>
-        </div>
-        <div class="filter-group">
-            <label>Demens-certifiering</label>
-            <select id="f-cert">
-                <option value="">Alla</option>
-                <option value="silviahem">Silviahemscertifierat</option>
-                <option value="demensakademin">Demensakademin</option>
-                <option value="stjarnmarkt">Stjärnmärkt</option>
-            </select>
-        </div>
-        <div class="filter-group">
-            <label>Max restid Rose</label>
-            <select id="f-time">
-                <option value="">Ingen gräns</option>
-                <option value="20">Max 20 min</option>
-                <option value="30">Max 30 min</option>
-                <option value="45">Max 45 min</option>
-            </select>
-        </div>
-        <div class="filter-group">
-            <label>Sortera</label>
-            <select id="f-sort">
-                <option value="score">Totalpoäng</option>
-                <option value="dementia">Demensvård</option>
-                <option value="physical">Fysisk vård</option>
-                <option value="reviews">Recensioner</option>
-                <option value="travel">Restid (Rose)</option>
-            </select>
-        </div>
+        <div class="fg"><label>Omrade</label><select id="f-area"><option value="">Alla</option><option value="lidingo">Lidingo</option><option value="sodermalm">Sodermalm</option><option value="kungsholmen">Kungsholmen</option><option value="soderort">Soderort</option><option value="hagersten">Hagersten/Satra</option><option value="norra">Norra</option><option value="nacka">Nacka</option></select></div>
+        <div class="fg"><label>Operator</label><select id="f-op"><option value="">Alla</option><option value="ideell">Stiftelse/Ideell</option><option value="kommun">Kommunal</option><option value="privat">Privat</option></select></div>
+        <div class="fg"><label>Demenscertifiering</label><select id="f-cert"><option value="">Alla</option><option value="silviahem">Silviahemscertifierat</option><option value="demensakademin">Demensakademin</option><option value="stjarnmarkt">Stjarnmarkt</option></select></div>
+        <div class="fg"><label>Max restid Rose</label><select id="f-time"><option value="">Alla</option><option value="20">Max 20 min</option><option value="30">Max 30 min</option><option value="45">Max 45 min</option></select></div>
+        <div class="fg"><label>Hundar valkommen</label><select id="f-dog"><option value="">Alla</option><option value="yes">Ja / Troligen ja</option></select></div>
+        <div class="fg"><label>Sortera</label><select id="f-sort"><option value="score">Totalpoang</option><option value="dementia">Demensvard</option><option value="physical">Fysisk vard</option><option value="reviews">Recensioner</option><option value="travel">Restid Rose</option><option value="rent">Hyra (lagst)</option></select></div>
     </div>
-    <div class="result-count" id="result-count"></div>
+    <div class="result-count" id="rc"></div>
 </div>
 
-<div id="cards-container"></div>
-
+<div id="cards"></div>
 </section>
 
-<!-- ===== PROCESS ===== -->
 <section id="process">
-<h2>Ansökningsprocessen</h2>
-<p>Så får Rolf en plats på vård- och omsorgsboende i Stockholm:</p>
+<h2>Ansokan steg for steg</h2>
 <ol class="steps">
-    <li><strong>Ring Äldre direkt: 08-80 65 65</strong>Be att få prata med en biståndshandläggare i Rolfs stadsdel (Spånga-Tensta). Rose kan ringa som anhörig.</li>
-    <li><strong>Personligt möte hemma hos Rolf</strong>Biståndshandläggaren bokar möte. Rose bör vara med. Beskriv Rolfs vardag: vaskulär demens, amputerat ben, rullstolsburen, fallrisk, upprepade sjukhusvistelser. Ta med läkarintyg och medicinlista.</li>
-    <li><strong>Utredning → biståndsbeslut (2–4 veckor)</strong>Handläggaren utreder behoven. Med Rolfs situation (dygnet runt-behov, kan inte bo kvar) bör beslutet komma relativt snabbt.</li>
-    <li><strong>Välj boende</strong>Stockholm har valfrihetssystem — ni har rätt att välja! Ange flera alternativ. Använd denna guide.</li>
-    <li><strong>Erbjudande och inflyttning</strong>Ni kan tacka nej till ett erbjudande utan att förlora köplats. Vid inflyttning upprättas en genomförandeplan (vårdplan).</li>
+    <li><strong>Ring Aldre direkt: 08-80 65 65</strong>Be om en bistandshandlaggare i Rolfs stadsdel (Spanga-Tensta). Rose kan ringa som anhorig.</li>
+    <li><strong>Personligt mote hemma hos Rolf</strong>Rose bor vara med. Beskriv vardagen: vaskular demens, amputerat ben, rullstolsburen, fallrisk, sjukhusvistelser. Ta med lakarintyg och medicinlista.</li>
+    <li><strong>Utredning, bistandsbeslut (2 till 4 veckor)</strong>Med Rolfs situation bor beslutet komma relativt snabbt.</li>
+    <li><strong>Valj boende</strong>Stockholm har valfrihetssystem, ni har ratt att valja. Ange flera alternativ.</li>
+    <li><strong>Erbjudande och inflyttning</strong>Ni kan tacka nej utan att forlora koplats. Vid inflyttning upprattas en genomforandeplan.</li>
 </ol>
-<div class="info warm"><p><strong>Vid avslag:</strong> Överklaga skriftligt till socialnämnden inom 3 veckor. Gratis. Se <a href="#rattigheter">rättigheter</a> nedan.</p></div>
+<div class="info warm"><p><strong>Vid avslag:</strong> Overklaga skriftligt till socialnaemnden inom 3 veckor. Gratis.</p></div>
 </section>
 
-<!-- ===== KOSTNADER ===== -->
 <section id="kostnader">
 <h2>Kostnader</h2>
-<p>Samma pris oavsett kommunal, privat eller ideell operatör:</p>
+<p>Samma pris oavsett kommunal, privat eller ideell operator:</p>
 <div class="costs">
-    <div class="cost-box"><div class="ca">max 2 660 kr</div><div class="ct">Omsorgsavgift/mån</div><div class="cx">Maxtaxa 2026, hela Sverige</div></div>
-    <div class="cost-box"><div class="ca">3 000–7 000 kr</div><div class="ct">Hyra/mån</div><div class="cx">Varierar per boende</div></div>
-    <div class="cost-box"><div class="ca">3 500–4 500 kr</div><div class="ct">Mat/mån</div><div class="cx">Alla måltider inkl.</div></div>
+    <div class="cb"><div class="ca">max 2 660 kr</div><div class="ct">Omsorgsavgift/man</div><div class="cx">Maxtaxa 2026</div></div>
+    <div class="cb"><div class="ca">6 000 till 11 000 kr</div><div class="ct">Hyra/man</div><div class="cx">Varierar per boende</div></div>
+    <div class="cb"><div class="ca">3 500 till 4 500 kr</div><div class="ct">Mat/man</div><div class="cx">Alla maltider</div></div>
 </div>
-<div class="info green"><p><strong>Förbehållsbelopp:</strong> Rolf ska ha minst ~7 296 kr/mån kvar efter alla avgifter. Om pengarna inte räcker sänks avgiften automatiskt.</p></div>
-<div class="info blue"><p><strong>Bostadstillägg:</strong> Skattefritt tillägg till pensionen — ring Pensionsmyndigheten 0771-776 776.</p></div>
+<div class="info green"><p><strong>Forbehallsbelopp:</strong> Rolf ska ha minst ca 7 296 kr/man kvar. Om pengarna inte racker sanks avgiften.</p></div>
+<div class="info blue"><p><strong>Bostadstillagg:</strong> Skattefritt tillagg till pensionen. Ring Pensionsmyndigheten 0771-776 776.</p></div>
 </section>
 
-<!-- ===== CHECKLISTA ===== -->
 <section id="checklista">
-<h2>Checklista vid besök</h2>
-<p>Ta med vid studiebesök. Fokusera på det viktigaste för Rolf:</p>
-
-<h3>Rolf-specifikt (fråga alltid)</h3>
+<h2>Checklista vid besok</h2>
+<h3>Fraga alltid (for Rolf)</h3>
 <ul class="check">
     <li>Erfarenhet av rullstolsburna med amputation?</li>
-    <li>Sjukgymnast — hur ofta? Rehabiliteringsprogram?</li>
-    <li>Arbetsterapeut för hjälpmedelsanpassning?</li>
-    <li>Hur hanteras förflyttning säng ↔ rullstol?</li>
-    <li>Demensutbildning hos personalen? Certifieringar?</li>
-    <li>Erfarenhet av vaskulär demens / stroke-uppföljning?</li>
+    <li>Sjukgymnast, hur ofta? Rehabiliteringsprogram?</li>
+    <li>Arbetsterapeut for hjalpmedelsanpassning?</li>
+    <li>Hur hanteras forflyttning sang till rullstol?</li>
+    <li>Demensutbildning? Certifieringar?</li>
+    <li>Erfarenhet av vaskular demens och strokeuppfoljning?</li>
+    <li>Far vi ta med hund pa besok?</li>
 </ul>
-<h3>Allmänt</h3>
+<h3>Allman koll</h3>
 <ul class="check">
-    <li>Första intryck — atmosfär, lukt, bemötande?</li>
-    <li>Lägenheten — storlek, badrum, rullstolsanpassat?</li>
-    <li>Personal — tid för boende? Bemanning kvällar/nätter?</li>
-    <li>Mat — be om menyer, delta vid måltid om möjligt</li>
-    <li>Aktiviteter — be om program senaste veckorna (inte broschyren)</li>
-    <li>Läkarbesök — hur ofta? Dygnet-runt-beredskap?</li>
-    <li>Besökstider — fria? Kan anhöriga äta med?</li>
+    <li>Atmosfar, lukt, bemotande?</li>
+    <li>Lagenheten, rullstolsanpassat genomgaende?</li>
+    <li>Personal, tid for boende? Bemanning kvallar/natter?</li>
+    <li>Mat, be om menyer, delta vid maltid</li>
+    <li>Aktiviteter, be om program senaste veckorna</li>
+    <li>Lakare, hur ofta? Sjukskoterska dygnet runt?</li>
+    <li>Besoktider, helst fria? Kan anhoriga ata med?</li>
 </ul>
 </section>
 
-<!-- ===== RÄTTIGHETER ===== -->
-<section id="rattigheter">
-<h2>Rättigheter</h2>
-<ul class="check">
-    <li>Rätt till individuell bedömning</li>
-    <li>Rätt att välja boende (valfrihetssystemet)</li>
-    <li>Rätt till genomförandeplan (vårdplan)</li>
-    <li>Rätt till värdigt bemötande och självbestämmande</li>
-</ul>
-<h3>Vid avslag</h3>
-<p>Skriv överklagande till socialnämnden inom <strong>3 veckor</strong>. De skickar vidare till förvaltningsrätten. Helt gratis.</p>
-<h3>Missnöjd med vården?</h3>
-<div class="info"><p>1. Prata med boendet först → 2. Biståndshandläggaren → 3. Patientnämnden (08-123 400 00) → 4. IVO (010-788 50 00) vid allvarliga brister → 5. Ni kan alltid byta boende.</p></div>
-</section>
-
-<!-- ===== KONTAKT ===== -->
 <section id="kontakt">
 <h2>Kontakt</h2>
 <div class="cgrid">
-    <div class="ccard"><div class="cl">Första steget</div><div class="cv">08-80 65 65</div><div class="cd">Äldre direkt — Stockholms stad</div></div>
-    <div class="ccard"><div class="cl">E-post</div><div class="cv">aldredirekt@stockholm.se</div><div class="cd">Stockholms stad</div></div>
-    <div class="ccard"><div class="cl">Sjukvårdsrådgivning</div><div class="cv">1177</div><div class="cd">Vårdguiden</div></div>
-    <div class="ccard"><div class="cl">Klagomål</div><div class="cv">08-123 400 00</div><div class="cd">Patientnämnden</div></div>
-    <div class="ccard"><div class="cl">Allvarliga brister</div><div class="cv">010-788 50 00</div><div class="cd">IVO</div></div>
-    <div class="ccard"><div class="cl">Bostadstillägg</div><div class="cv">0771-776 776</div><div class="cd">Pensionsmyndigheten</div></div>
+    <div class="cc"><div class="cl">Forsta steget</div><div class="cv">08-80 65 65</div><div class="cd">Aldre direkt, Stockholms stad</div></div>
+    <div class="cc"><div class="cl">E-post</div><div class="cv">aldredirekt@stockholm.se</div><div class="cd">Stockholms stad</div></div>
+    <div class="cc"><div class="cl">Sjukvardsradgivning</div><div class="cv">1177</div><div class="cd">Vardguiden</div></div>
+    <div class="cc"><div class="cl">Klagomal</div><div class="cv">08-123 400 00</div><div class="cd">Patientnaemnden</div></div>
+    <div class="cc"><div class="cl">Allvarliga brister</div><div class="cv">010-788 50 00</div><div class="cd">IVO</div></div>
+    <div class="cc"><div class="cl">Bostadstillagg</div><div class="cv">0771-776 776</div><div class="cd">Pensionsmyndigheten</div></div>
 </div>
 </section>
 
-<!-- ===== RESURSER ===== -->
 <section>
-<h2>Länkar</h2>
-<div style="column-count:2;column-gap:2rem;font-size:.85rem">
-    <p><strong>Sök boenden</strong><br>
-    <a href="https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/" target="_blank">Stockholms stad</a><br>
-    <a href="https://seniorval.se/aldreboende/stockholms-lan" target="_blank">Seniorval.se</a><br>
-    <a href="https://aldreguiden.se/" target="_blank">Äldreguiden (Socialstyrelsen)</a></p>
-    <p><strong>Jämför kvalitet</strong><br>
-    <a href="https://www.vardforetagarna.se/aldreboendetoppen/" target="_blank">Äldreboendtoppen</a><br>
-    <a href="https://www.socialstyrelsen.se/statistik-och-data/oppna-jamforelser/socialtjanst/aldreomsorg/" target="_blank">Öppna jämförelser</a></p>
-    <p><strong>Ansökan</strong><br>
-    <a href="https://aldreomsorg.stockholm/ansok-om-aldreomsorg/" target="_blank">Ansök om äldreomsorg</a><br>
-    <a href="https://seniorval.se/bra-att-veta/kommunal-aldreomsorg/ansokningsprocessen-steg-steg" target="_blank">Processguide (Seniorval)</a></p>
-    <p><strong>Checklista</strong><br>
-    <a href="https://seniorval.se/tips-och-guider/checklista-aldreboende" target="_blank">Seniorval checklista</a><br>
-    <a href="https://seniorval.se/bra-att-veta/overklagan-och-klagomal" target="_blank">Överklagan</a></p>
-</div>
+<h2>Lankar</h2>
+<p><a href="https://aldreomsorg.stockholm/hitta-vard-och-omsorgsboende/" target="_blank">Stockholms stad: Hitta boende</a> · <a href="https://seniorval.se/aldreboende/stockholms-lan" target="_blank">Seniorval.se</a> · <a href="https://aldreguiden.se/" target="_blank">Aldreguiden (Socialstyrelsen)</a> · <a href="https://www.vardforetagarna.se/aldreboendetoppen/" target="_blank">Aldreboendetoppen</a> · <a href="https://seniorval.se/tips-och-guider/checklista-aldreboende" target="_blank">Checklista (Seniorval)</a></p>
 </section>
 
-</div><!-- /.container -->
+</main>
+</div>
 
-<footer><div class="container">Sammanställd april 2026. Kontrollera alltid aktuella uppgifter via respektive webbplats eller ring Äldre direkt 08-80 65 65.</div></footer>
+<footer><div class="wrap">Sammanstalld april 2026. Kontrollera alltid aktuella uppgifter via respektive webbplats eller ring Aldre direkt 08-80 65 65.</div></footer>
 
 <script>
-const homes = [
-  {
-    name:"Attendo Långbroberg",
-    area:"soderort", areaLabel:"Älvsjö",
-    op:"privat", opLabel:"Attendo",
-    cert:"none", certLabel:"",
-    lgh:74, sqm:"~40 kvm, balkong",
-    badges:["Bland Sveriges bästa","4.8–4.9/5 Socialstyrelsen"],
-    badgeTypes:["go","g"],
-    desc:"Rankas i \"den absoluta svenska toppen\" av Socialstyrelsen. 74 lägenheter om ~40 kvm med balkong. Sjuksköterskor dygnet runt, läkarbesök 2 ggr/vecka. Vacker äldre byggnad med trädgård och vinterträdgård. Utmärkt fysioterapi och rehabiliteringsmöjligheter.",
-    dementia:8, physical:10, reviews:10, profile:9,
-    tRose:40, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13 Östermalmstorg → bytt T17/18/19 → Älvsjö + buss",
-    tRolf:35, tRolfRoute:"T11 Tensta → T-centralen → pendeltåg Älvsjö + buss"
-  },
-  {
-    name:"Borgerskapets Vård- och Omsorgsboende",
-    area:"sodermalm", areaLabel:"Södermalm (Högalidskyrkan)",
-    op:"ideell", opLabel:"Stiftelsen Borgerskapet (sedan 1724)",
-    cert:"silviahem", certLabel:"Silviahemscertifierat",
-    lgh:74, sqm:"",
-    badges:["Silviahemscertifierat","88% nöjdhet","Stiftelse sedan 1724"],
-    badgeTypes:["go","g","b"],
-    desc:"Drivs utan vinstsyfte sedan 1724. 50 somatiska + 24 demensplatser. Först i Sverige med Silviahemmets palliativa vårdfilosofi. Sjukgymnaster OCH arbetsterapeuter på plats vardagar. Berömd för salutogent förhållningssätt och rika aktiviteter. Upphöjt läge med stadsutsikt.",
-    dementia:10, physical:9, reviews:9, profile:10,
-    tRose:35, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13/14 Slussen → buss/promenad till Högalid",
-    tRolf:30, tRolfRoute:"T11 Tensta → T-centralen → T13/14 Hornstull + promenad"
-  },
-  {
-    name:"Ersta Lydiahemmet",
-    area:"soderort", areaLabel:"Farsta Strand",
-    op:"ideell", opLabel:"Ersta diakoni",
-    cert:"none", certLabel:"ISO 9001 + ISO 14001",
-    lgh:54, sqm:"~30 kvm",
-    badges:["Nominerat Årets Byggnad 2021","Ersta diakoni (ideell)","Öppnat 2020"],
-    badgeTypes:["go","g","b"],
-    desc:"Nybyggt 2020, nominerat till Årets vård- och omsorgsbyggnad. 36 demensplatser + 18 somatiska. \"Playa del Lydia\" — ljus- och solrum. ISO-certifierat. Nära Farsta Strand T-bana. Sveriges största ideella vårdgivare.",
-    dementia:9, physical:9, reviews:8, profile:9,
-    tRose:50, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13 Gamla stan → T18/19 Farsta strand",
-    tRolf:40, tRolfRoute:"T11 Tensta → T-centralen → T18/19 Farsta strand"
-  },
-  {
-    name:"Högsätra Vård- och Omsorgsboende",
-    area:"lidingo", areaLabel:"Lidingö",
-    op:"kommun", opLabel:"Lidingö stad",
-    cert:"silviahem", certLabel:"Silviahemscertifierat",
-    lgh:60, sqm:"",
-    badges:["Silviahemscertifierat","Kulturprofil","Närmast Rose"],
-    badgeTypes:["go","g","w"],
-    desc:"Silviahemscertifierat — all personal utbildad i demensvård. Stark kulturprofil: musik, sång, dans, litteratur. Egen aktivitetssamordnare och sjukgymnast. Kommunalt utan vinstsyfte. Allra närmast Rose.",
-    dementia:9, physical:8, reviews:8, profile:8,
-    tRose:15, tRoseRoute:"Buss 201/204 från Larsberg",
-    tRolf:50, tRolfRoute:"T11 Tensta → T-centralen → T13 Ropsten → Lidingöbanan/buss"
-  },
-  {
-    name:"Vallgossen — Stockholms Sjukhem",
-    area:"kungsholmen", areaLabel:"Kungsholmen (Fridhemsplan)",
-    op:"ideell", opLabel:"Stockholms Sjukhem (stiftelse)",
-    cert:"stjarnmarkt", certLabel:"Stjärnmärkt",
-    lgh:36, sqm:"33 kvm",
-    badges:["Stjärnmärkt","85% nöjdhet","Egna läkare dygnet runt"],
-    badgeTypes:["go","g","b"],
-    desc:"En av Sveriges största ideella vårdgivare. 36 lgh om 33 kvm med eget kök och tvättmaskin. Egna läkare med medicinsk tillgång dygnet runt — ovanligt och värdefullt. 94% bra bemötande. Hanterar även förvärvad hjärnskada — relevant för Rolfs stroke. Nominerad White Guide Senior för maten.",
-    dementia:9, physical:9, reviews:9, profile:10,
-    tRose:30, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13/14 Fridhemsplan",
-    tRolf:25, tRolfRoute:"T11 Tensta → T-centralen → T13 Fridhemsplan"
-  },
-  {
-    name:"Ersta Mariahemmet",
-    area:"soderort", areaLabel:"Enskededalen",
-    op:"ideell", opLabel:"Ersta diakoni",
-    cert:"stjarnmarkt", certLabel:"Stjärnmärkt (Svenskt Demenscentrum)",
-    lgh:0, sqm:"",
-    badges:["Stjärnmärkt","ISO-certifierat","Nära Sandsborg T-bana"],
-    badgeTypes:["go","g","b"],
-    desc:"Erstas första äldreboende — rötter från 1800-talet. Stjärnmärkt: 80%+ av personalen genomfört alla 4 demensutbildningssteg (guldstandard). ISO 9001 + ISO 14001. Mäter kvalitet i måltid, aktiviteter och personlig omvårdnad. Nära Sandsborg T-bana.",
-    dementia:10, physical:8, reviews:8, profile:9,
-    tRose:40, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13 Gamla stan → T17 Sandsborg",
-    tRolf:30, tRolfRoute:"T11 Tensta → T-centralen → T17 Sandsborg"
-  },
-  {
-    name:"Attendo Nilstorpsgården",
-    area:"lidingo", areaLabel:"Lidingö",
-    op:"privat", opLabel:"Attendo",
-    cert:"none", certLabel:"",
-    lgh:80, sqm:"",
-    badges:["86.7% nöjdhet — högst på Lidingö","80 lgh"],
-    badgeTypes:["g","b"],
-    desc:"Högst nöjdhet av alla boenden på Lidingö (Socialstyrelsen). 80 lägenheter i 10 enheter. Sjuksköterskor, sjukgymnaster och arbetsterapeuter. Säsongsmenyer med kvalitetsråvaror. Både demens och somatik.",
-    dementia:8, physical:8, reviews:9, profile:7,
-    tRose:15, tRoseRoute:"Buss 201/204 eller Lidingöbanan",
-    tRolf:50, tRolfRoute:"T11 Tensta → T-centralen → T13 Ropsten → Lidingöbanan/buss"
-  },
-  {
-    name:"Bräcke diakoni Hornstull",
-    area:"sodermalm", areaLabel:"Södermalm (Hornstull)",
-    op:"ideell", opLabel:"Bräcke diakoni",
-    cert:"none", certLabel:"Akademiskt boende",
-    lgh:36, sqm:"32–41 kvm",
-    badges:["Akademiskt boende","\"God kvalitet, inga brister\" 2025"],
-    badgeTypes:["go","g"],
-    desc:"Samarbete med Marie Cederschiölds högskola. Kvalitetsbedömning 2025: \"God kvalitet, inga identifierade brister.\" Demensfokus, 36 lgh. Ideell operatör utan vinstsyfte.",
-    dementia:9, physical:8, reviews:8, profile:9,
-    tRose:35, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13/14 Hornstull",
-    tRolf:25, tRolfRoute:"T11 Tensta → T-centralen → T13/14 Hornstull"
-  },
-  {
-    name:"Humana Sjöstadsgården",
-    area:"sodermalm", areaLabel:"Hammarby Sjöstad",
-    op:"privat", opLabel:"Humana",
-    cert:"silviahem", certLabel:"Silviahemscertifierat",
-    lgh:59, sqm:"",
-    badges:["Silviahemscertifierat","Modernt"],
-    badgeTypes:["go","b"],
-    desc:"Silviahemscertifierat i moderna Hammarby Sjöstad. 32 demens + 27 somatik. Musik, målning, träning, promenader. Tvärbanan + buss. Modernt område.",
-    dementia:9, physical:8, reviews:7, profile:8,
-    tRose:35, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13 Slussen → buss 74 Sjöstaden",
-    tRolf:35, tRolfRoute:"T11 Tensta → T-centralen → buss/tvärbana till Sjöstaden"
-  },
-  {
-    name:"Blomsterfonden Liseberg",
-    area:"soderort", areaLabel:"Älvsjö",
-    op:"ideell", opLabel:"Blomsterfonden",
-    cert:"none", certLabel:"",
-    lgh:66, sqm:"26–34 kvm",
-    badges:["Nominerad Kundkristallen","Ideell","ÄldrePoer gym"],
-    badgeTypes:["go","g","b"],
-    desc:"66 lgh, ideell förening. ÄldrePoer-program: individuell fysisk träning (styrka, balans, rörlighet) med sjukgymnast i eget gym — utmärkt för Rolf. 1 somatik + 9 demensenheter. Egen kontaktperson, etikrådgivare.",
-    dementia:8, physical:9, reviews:8, profile:8,
-    tRose:40, tRoseRoute:"Lidingöbanan → T14 Ropsten → pendeltåg Stockholms södra → Älvsjö + buss",
-    tRolf:35, tRolfRoute:"T11 Tensta → T-centralen → pendeltåg Älvsjö + buss"
-  },
-  {
-    name:"Nytorgsgården",
-    area:"sodermalm", areaLabel:"Södermalm (Nytorget)",
-    op:"kommun", opLabel:"Stockholms stad",
-    cert:"silviahem", certLabel:"Silviahemscertifierat",
-    lgh:31, sqm:"",
-    badges:["Först Silviacertifierat demensboende","Kvalitetsutmärkelse"],
-    badgeTypes:["go","g"],
-    desc:"Sveriges första demensboende att bli Silviahemscertifierat. Hedrande omnämnande vid Stockholms kvalitetsutmärkelse. Silvia-sjuksköterskor, sjukgymnaster och arbetsterapeuter. Litet och personligt, 31 platser. Centralt Södermalm.",
-    dementia:10, physical:8, reviews:8, profile:9,
-    tRose:35, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13 Medborgarplatsen + promenad",
-    tRolf:30, tRolfRoute:"T11 Tensta → T-centralen → T13 Medborgarplatsen + promenad"
-  },
-  {
-    name:"Katarinagården",
-    area:"sodermalm", areaLabel:"Södermalm",
-    op:"kommun", opLabel:"Stockholms stad",
-    cert:"none", certLabel:"",
-    lgh:55, sqm:"~30 kvm",
-    badges:["Låg personalomsättning","Geriatriker varje vecka","KRAV-mat"],
-    badgeTypes:["g","b","g"],
-    desc:"55 lgh. Sjukgymnaster, arbetsterapeuter och undersköterskor med LÅG personalomsättning och LÅNG erfarenhet. Geriatriker besöker varje vecka. Eget kök varje våning, KRAV-certifierad ekologisk mat. Vacker innergård.",
-    dementia:7, physical:8, reviews:8, profile:8,
-    tRose:35, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13 Medborgarplatsen + promenad",
-    tRolf:30, tRolfRoute:"T11 Tensta → T-centralen → T13 Medborgarplatsen + promenad"
-  },
-  {
-    name:"Humana Riddargården",
-    area:"ostermalm", areaLabel:"Odenplan",
-    op:"privat", opLabel:"Humana",
-    cert:"silviahem", certLabel:"Silviahemscertifierat",
-    lgh:0, sqm:"",
-    badges:["Silviahemscertifierat","Centralt"],
-    badgeTypes:["go","b"],
-    desc:"Silviahemscertifierat vid Odenplan. Demens och somatik. Mycket centralt — 5 min till T-bana, bussar, pendeltåg. Begränsat med recensioner.",
-    dementia:9, physical:7, reviews:6, profile:7,
-    tRose:30, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13 Östermalmstorg → T14 Odenplan",
-    tRolf:20, tRolfRoute:"T11 Tensta → T-centralen → T14 Odenplan"
-  },
-  {
-    name:"Humana Åsengården",
-    area:"hagersten", areaLabel:"Hägersten",
-    op:"privat", opLabel:"Humana",
-    cert:"silviahem", certLabel:"Silviahemscertifierat",
-    lgh:29, sqm:"33–35 kvm",
-    badges:["Silviahemscertifierat","Kvalitetsupphandling"],
-    badgeTypes:["go","g"],
-    desc:"Silviahemscertifierat, 29 lgh. Litet och personligt. Stockholms stad anser att Humana \"arbetar systematiskt med kvalitetsförbättring.\" Nära affärer och kollektivtrafik.",
-    dementia:9, physical:7, reviews:7, profile:7,
-    tRose:45, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13/14 → buss till Hägersten",
-    tRolf:30, tRolfRoute:"T11 Tensta → T-centralen → T14 → buss Hägersten"
-  },
-  {
-    name:"Vardaga Silverhöjden",
-    area:"lidingo", areaLabel:"Lidingö (Rudboda)",
-    op:"privat", opLabel:"Vardaga",
-    cert:"demensakademin", certLabel:"Demensakademin",
-    lgh:72, sqm:"",
-    badges:["Demensakademin","Egen kock"],
-    badgeTypes:["go","g"],
-    desc:"72 platser på Lidingö. Demensakademicertifierat med egen kock som lagar från grunden. Fokus på rörelse och musik. Lugnt villaområde i Rudboda.",
-    dementia:8, physical:7, reviews:7, profile:7,
-    tRose:20, tRoseRoute:"Buss 201/204/Lidingöbanan",
-    tRolf:50, tRolfRoute:"T11 Tensta → T-centralen → T13 Ropsten → Lidingöbanan/buss"
-  },
-  {
-    name:"Vardaga Villa Dalenum",
-    area:"lidingo", areaLabel:"Lidingö (Dalenum)",
-    op:"privat", opLabel:"Vardaga",
-    cert:"demensakademin", certLabel:"Demensakademin",
-    lgh:0, sqm:"",
-    badges:["Demensakademin","Nytt (2018)","Sjöutsikt"],
-    badgeTypes:["go","b","g"],
-    desc:"I historiska AGA-fabriken, öppnat 2018. Panoramafönster med sjöutsikt. Demens och somatik. Demensakademicertifierat. Nära Rose på Lidingö.",
-    dementia:8, physical:7, reviews:6, profile:8,
-    tRose:12, tRoseRoute:"Buss/Lidingöbanan kort resa",
-    tRolf:50, tRolfRoute:"T11 Tensta → T-centralen → T13 Ropsten → Lidingöbanan"
-  },
-  {
-    name:"Siggebogården",
-    area:"lidingo", areaLabel:"Lidingö (centralt)",
-    op:"kommun", opLabel:"Lidingö stad",
-    cert:"silviahem", certLabel:"Silviahemscertifierat",
-    lgh:0, sqm:"",
-    badges:["Silviahemscertifierat sedan 2015"],
-    badgeTypes:["go"],
-    desc:"Kommunalt boende, centralt på Lidingö. Silviahemscertifierat sedan 2015 — lång erfarenhet av certifierad demensvård.",
-    dementia:9, physical:7, reviews:7, profile:7,
-    tRose:15, tRoseRoute:"Buss/Lidingöbanan",
-    tRolf:50, tRolfRoute:"T11 Tensta → T-centralen → T13 Ropsten → Lidingöbanan"
-  },
-  {
-    name:"Förenade Care Tryggheten",
-    area:"norra", areaLabel:"Bergshamra, Solna",
-    op:"privat", opLabel:"Förenade Care",
-    cert:"none", certLabel:"",
-    lgh:31, sqm:"",
-    badges:["100% nöjdhet 2024","Djur & natur-profil"],
-    badgeTypes:["go","g"],
-    desc:"100% nöjdhet i Socialstyrelsens undersökning 2024 — högst i hela regionen! 31 lgh med djur- och naturprofil nära Brunnsviken. OBS: Somatisk inriktning, ej specifik demenscertifiering.",
-    dementia:6, physical:8, reviews:10, profile:7,
-    tRose:40, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13 → T11 Bergshamra",
-    tRolf:25, tRolfRoute:"T11 Tensta → T11 Bergshamra"
-  },
-  {
-    name:"Danvikshem",
-    area:"nacka", areaLabel:"Nacka (Finnbodaberget)",
-    op:"ideell", opLabel:"Stiftelsen Danvikshem",
-    cert:"none", certLabel:"",
-    lgh:224, sqm:"",
-    badges:["224 platser","Prisbelönad mat","WHO-certifierat"],
-    badgeTypes:["b","g","go"],
-    desc:"Stort boende: 148 demens + 76 somatik. Stiftelse. WHO-certifierat \"Tryggt och säkert äldreboende\". Arla Guldko-vinnare (mat). OBS: Blandade recensioner — en del kritik mot personalens bemötande. Stort kan kännas opersonligt.",
-    dementia:7, physical:7, reviews:6, profile:7,
-    tRose:30, tRoseRoute:"Lidingöbanan → T14 Ropsten → buss 443 Finnboda",
-    tRolf:40, tRolfRoute:"T11 Tensta → T-centralen → T13 Slussen → buss 443"
-  },
-  {
-    name:"Kavat Vård Björksätra",
-    area:"hagersten", areaLabel:"Sätra",
-    op:"privat", opLabel:"Kavat Vård",
-    cert:"none", certLabel:"Akademiskt samarbete",
-    lgh:48, sqm:"",
-    badges:["All-inclusive","Kulturprofil"],
-    badgeTypes:["go","b"],
-    desc:"48 lgh med all-inclusive-koncept. Kulturprofil: musik, konst, berättande, traditioner. Samarbete med Ersta Sköndals högskola för bästa demensvård. Även korttidsplatser.",
-    dementia:7, physical:7, reviews:7, profile:8,
-    tRose:55, tRoseRoute:"Lidingöbanan → T14 Ropsten → T13/14 → T13 Sätra + buss",
-    tRolf:35, tRolfRoute:"T11 Tensta → T-centralen → T13 → buss Sätra"
-  }
+const H=[
+{
+ name:"Borgerskapets Vard- och Omsorgsboende",
+ area:"sodermalm",areaLabel:"Sodermalm (Hogalidskyrkan)",
+ op:"ideell",opLabel:"Stiftelsen Borgerskapet (sedan 1724, ideell)",
+ cert:"silviahem",certLabel:"Silviahemscertifierat",
+ lgh:74,sqm:"23 till 78 kvm",
+ badges:["Silviahemscertifierat","88% nojdhet","Ideell sedan 1724"],bt:["go","g","b"],
+ desc:"Drivs utan vinstsyfte sedan 1724. 50 somatiska + 24 demensplatser. Forst i Sverige med Silviahemmets palliativa vardfilosofi. Sjukgymnaster OCH arbetsterapeuter pa plats vardagar. Salutogent forhallningssatt. Upphojt lage med stadsutsikt. Man behover INTE vara medlem (Borgare) for att bo har, det racker med bistandsbeslut fran kommunen.",
+ phone:"08-620 89 00",email:"",
+ rent:"Ej publicerad (varierar, 23 till 78 kvm)",rentNum:0,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"\"While the place appears good, it destroys all that is fine remaining in life\" (Patientguiden, 1 recension, 1/5). OBS: enstaka recension, kanske inte representativ. 88% nojdhet i Socialstyrelsens undersokning.",
+ dementia:10,physical:9,reviews:7,profile:10,
+ tRose:35,tRoseR:"Lidingobanan, T14 Ropsten, T13/14 Slussen, buss till Hogalid",
+ tRolf:30,tRolfR:"T11 Tensta, T-centralen, T13/14 Hornstull + promenad"
+},
+{
+ name:"Attendo Langbroberg",
+ area:"soderort",areaLabel:"Alvsjo",
+ op:"privat",opLabel:"Attendo",
+ cert:"none",certLabel:"",
+ lgh:74,sqm:"ca 40 kvm, balkong",
+ badges:["Bland Sveriges basta","4.8 till 4.9/5"],bt:["go","g"],
+ desc:"Rankas i den absoluta svenska toppen av Socialstyrelsen. 74 lagenheter med balkong. Sjukskoterskor dygnet runt, lakare 2 ggr/vecka. Vacker aldre byggnad med tradgard och vintertradgard.",
+ phone:"010-140 10 70",email:"",
+ rent:"7 700 till 11 200 kr/man",rentNum:7700,
+ dog:"Fraga verksamhetschef Daniel Ekman",dogOk:false,
+ review:"\"Sa har efter en vecka daligt. Maten under all kritik.\" (Hitta.se, 1 recension). MEN Socialstyrelsen ger 4.8 till 4.9 av 5, bland landets hogsta.",
+ dementia:8,physical:10,reviews:9,profile:9,
+ tRose:40,tRoseR:"Lidingobanan, Ropsten, pendeltag via Stockholms sodra till Alvsjo + buss",
+ tRolf:35,tRolfR:"T11 Tensta, T-centralen, pendeltag Alvsjo + buss"
+},
+{
+ name:"Vallgossen, Stockholms Sjukhem",
+ area:"kungsholmen",areaLabel:"Kungsholmen (Fridhemsplan)",
+ op:"ideell",opLabel:"Stockholms Sjukhem (stiftelse)",
+ cert:"stjarnmarkt",certLabel:"Stjarnmarkt",
+ lgh:102,sqm:"33 kvm",
+ badges:["Stjarnmarkt","85% nojdhet","Egna lakare dygnet runt"],bt:["go","g","b"],
+ desc:"En av Sveriges storsta ideella vardgivare. 102 lgh med eget kok, tvattmaskin och torktumlare. Egna lakare dygnet runt, ovanligt och vardefullt. 94% bra bemotande. Hanterar aven forvarvad hjarnskada, relevant for Rolfs stroke. Nominerad White Guide Senior for maten. Terapihund Scooby besoker 2 ggr/vecka.",
+ phone:"08-122 84 808",email:"",
+ rent:"Ej publicerad (kontakta boendet)",rentNum:0,
+ dog:"Terapihund Scooby besoker 2 ggr/vecka. Fraga om eget hundbesok.",dogOk:true,
+ review:"Socialstyrelsens undersokning: boende och anhoriga ar \"positiva och nojda\". Vard och trygghet far hogst betyg.",
+ dementia:9,physical:9,reviews:9,profile:10,
+ tRose:30,tRoseR:"Lidingobanan, T14 Ropsten, T13/14 Fridhemsplan",
+ tRolf:25,tRolfR:"T11 Tensta, T-centralen, T13 Fridhemsplan"
+},
+{
+ name:"Ersta Lydiahemmet",
+ area:"soderort",areaLabel:"Farsta Strand",
+ op:"ideell",opLabel:"Ersta diakoni",
+ cert:"none",certLabel:"ISO 9001 + ISO 14001",
+ lgh:54,sqm:"ca 30 kvm",
+ badges:["Nominerat Arets Byggnad 2021","Ersta diakoni","Oppnat 2020"],bt:["go","g","b"],
+ desc:"Nybyggt 2020, nominerat till Arets vard- och omsorgsbyggnad. 36 demens + 18 somatik. \"Playa del Lydia\", ljus- och solrum. ISO-certifierat. Nara Farsta Strand T-bana. Hyra inkluderar hemorsakring, el, internet, TV.",
+ phone:"08-714 63 62",email:"Joy.seguis@erstadiakoni.se",
+ rent:"Ej publicerad (baserat pa storlek)",rentNum:0,
+ dog:"JA, Ersta valkomnar hundar! Hund ska vara rumsren och inte aggressiv. Anhoriga ansvarar.",dogOk:true,
+ review:"\"Fantastiskt stalle\" med \"super harlig personal som brinner for det de gor, alltid glada och trevliga\" och \"manga trevliga aktiviteter, hembakt fika, fint dukat\". 3.7/5 pa Hitta.se (3 recensioner).",
+ dementia:9,physical:9,reviews:8,profile:9,
+ tRose:50,tRoseR:"Lidingobanan, Ropsten, T13 Gamla stan, T18/19 Farsta strand",
+ tRolf:40,tRolfR:"T11 Tensta, T-centralen, T18/19 Farsta strand"
+},
+{
+ name:"Hogsatra Vard- och Omsorgsboende",
+ area:"lidingo",areaLabel:"Lidingo",
+ op:"kommun",opLabel:"Lidingo stad",
+ cert:"silviahem",certLabel:"Silviahemscertifierat",
+ lgh:60,sqm:"",
+ badges:["Silviahemscertifierat","Kulturprofil","Narmast Rose"],bt:["go","g","w"],
+ desc:"Silviahemscertifierat, all personal utbildad i demensvard. Stark kulturprofil: musik, sang, dans, litteratur. Egen aktivitetssamordnare och sjukgymnast. Kommunalt utan vinstsyfte.",
+ phone:"08-731 35 00 (Lidingo stad)",email:"",
+ rent:"Ej publicerad (kontakta Lidingo kommun)",rentNum:0,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"5.0/5 pa Patientguiden (1 recension). Beskrivet som \"modernt och valkomnande\" med \"skoena och stilfulla mobler\".",
+ dementia:9,physical:8,reviews:8,profile:8,
+ tRose:15,tRoseR:"Buss 201/204 fran Larsberg",
+ tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan/buss"
+},
+{
+ name:"Ersta Mariahemmet",
+ area:"soderort",areaLabel:"Enskededalen",
+ op:"ideell",opLabel:"Ersta diakoni",
+ cert:"stjarnmarkt",certLabel:"Stjarnmarkt (Svenskt Demenscentrum)",
+ lgh:83,sqm:"ca 28 kvm",
+ badges:["Stjarnmarkt","ISO-certifierat"],bt:["go","g"],
+ desc:"Erstas forsta aldreboende, rotter fran 1800-talet. Stjarnmarkt: 80%+ av personalen genomfort alla 4 demensutbildningssteg. ISO 9001 + ISO 14001. 83 lagenheter. Nara Sandsborg T-bana.",
+ phone:"08-462 31 34",email:"",
+ rent:"Ej publicerad (baserat pa storlek)",rentNum:0,
+ dog:"JA, Ersta valkomnar hundar! Samma policy som Lydiahemmet.",dogOk:true,
+ review:"5.0/5 pa Hitta.se (1 recension). Vacker innergard for fika och tradgardsaktiviteter.",
+ dementia:10,physical:8,reviews:8,profile:9,
+ tRose:40,tRoseR:"Lidingobanan, Ropsten, T13 Gamla stan, T17 Sandsborg",
+ tRolf:30,tRolfR:"T11 Tensta, T-centralen, T17 Sandsborg"
+},
+{
+ name:"Katarinagarden",
+ area:"sodermalm",areaLabel:"Sodermalm",
+ op:"kommun",opLabel:"Stockholms stad",
+ cert:"silviahem",certLabel:"Silviahemscertifierat (nyligen)",
+ lgh:55,sqm:"ca 30 kvm",
+ badges:["Lag personalomsattning","Geriatriker varje vecka","KRAV-mat"],bt:["g","b","g"],
+ desc:"55 lgh. Sjukgymnaster, arbetsterapeuter och underskoterskor med LAG personalomsattning och LANG erfarenhet. Geriatriker besoker varje vecka. Eget kok varje vaning, KRAV-certifierad ekologisk mat. Nyligen Silviahemscertifierat.",
+ phone:"08-80 65 65 (Aldre direkt)",email:"aldredirekt@stockholm.se",
+ rent:"6 084 till 6 582 kr/man",rentNum:6084,
+ dog:"Kommunalt, anhoriga far generellt ta med hund vid besok. Fraga personalen.",dogOk:true,
+ review:"Gott rykte for matkvalitet (kocklagad, dietistberaknad, KRAV-certifierad).",
+ dementia:8,physical:8,reviews:8,profile:8,
+ tRose:35,tRoseR:"Lidingobanan, Ropsten, T13 Medborgarplatsen + promenad",
+ tRolf:30,tRolfR:"T11 Tensta, T-centralen, T13 Medborgarplatsen + promenad"
+},
+{
+ name:"Nytorgsgarden",
+ area:"sodermalm",areaLabel:"Sodermalm (Nytorget)",
+ op:"kommun",opLabel:"Stockholms stad",
+ cert:"silviahem",certLabel:"Silviahemscertifierat (forst i Sverige!)",
+ lgh:37,sqm:"",
+ badges:["Forst Silviacertifierat demensboende","Kvalitetsutmarkelse"],bt:["go","g"],
+ desc:"Sveriges forsta demensboende att bli Silviahemscertifierat. Hedrande omnamnande vid Stockholms kvalitetsutmarkelse. Silvia-sjukskoterskor, sjukgymnaster och arbetsterapeuter. Litet och personligt.",
+ phone:"08-80 65 65 (Aldre direkt)",email:"aldredirekt@stockholm.se",
+ rent:"6 833 till 7 599 kr/man",rentNum:6833,
+ dog:"Kommunalt, anhoriga far generellt ta med hund vid besok. Fraga personalen.",dogOk:true,
+ review:"Inga publicerade recensioner. Kvalitetsutmarkelse fran Stockholms stad.",
+ dementia:10,physical:8,reviews:7,profile:9,
+ tRose:35,tRoseR:"Lidingobanan, Ropsten, T13 Medborgarplatsen + promenad",
+ tRolf:30,tRolfR:"T11 Tensta, T-centralen, T13 Medborgarplatsen + promenad"
+},
+{
+ name:"Attendo Nilstorpsgarden",
+ area:"lidingo",areaLabel:"Lidingo",
+ op:"privat",opLabel:"Attendo",
+ cert:"none",certLabel:"",
+ lgh:80,sqm:"30 kvm",
+ badges:["86.7% nojdhet, hogst pa Lidingo"],bt:["g"],
+ desc:"Hogst nojdhet pa Lidingo (Socialstyrelsen). 80 lagenheter, 10 enheter om 8. Sjukskoterskor, sjukgymnaster, arbetsterapeuter. Sasongmenyer. Bade demens och somatik.",
+ phone:"010-140 10 70",email:"",
+ rent:"9 250 kr/man (inkl. internet)",rentNum:9250,
+ dog:"Fraga verksamhetschef Caroline Ostberg",dogOk:false,
+ review:"86.7% nojdhet i Socialstyrelsens undersokning. Inga individuella recensioner hittade.",
+ dementia:8,physical:8,reviews:9,profile:7,
+ tRose:15,tRoseR:"Buss 201/204 eller Lidingobanan",
+ tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan/buss"
+},
+{
+ name:"Bracke diakoni Hornstull",
+ area:"sodermalm",areaLabel:"Sodermalm (Hornstull)",
+ op:"ideell",opLabel:"Bracke diakoni",
+ cert:"none",certLabel:"Akademiskt boende",
+ lgh:36,sqm:"32 till 41 kvm",
+ badges:["Akademiskt boende","God kvalitet, inga brister 2025"],bt:["go","g"],
+ desc:"Samarbete med Marie Cederschiolds hogskola. Kvalitetsbedomning 2025: \"God kvalitet, inga identifierade brister.\" Demensfokus, 36 lgh. Ideell.",
+ phone:"08-556 068 50",email:"",
+ rent:"9 445 till 11 132 kr/man",rentNum:9445,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"Inga publicerade recensioner. Kvalitetsbedomning 2025: \"goda forutsattningar for fortsatt trygg och meningsfull vard.\"",
+ dementia:9,physical:8,reviews:7,profile:9,
+ tRose:35,tRoseR:"Lidingobanan, Ropsten, T13/14 Hornstull",
+ tRolf:25,tRolfR:"T11 Tensta, T-centralen, T13/14 Hornstull"
+},
+{
+ name:"Humana Sjostadsgarden",
+ area:"sodermalm",areaLabel:"Hammarby Sjostad",
+ op:"privat",opLabel:"Humana",
+ cert:"silviahem",certLabel:"Silviahemscertifierat",
+ lgh:59,sqm:"",
+ badges:["Silviahemscertifierat"],bt:["go"],
+ desc:"Silviahemscertifierat i moderna Hammarby Sjostad. 32 demens + 27 somatik. Musik, malning, traning, promenader. Tvarbanan + buss.",
+ phone:"08-657 89 44",email:"camilla.falkbrink@humana.se",
+ rent:"Ej publicerad (kontakta boendet)",rentNum:0,
+ dog:"Fraga verksamhetschef Camilla Falkbrink",dogOk:false,
+ review:"4.3/5 pa Stanplats (6 recensioner). \"Fantastiskt aldreboende, underbar personal, otroligt nojd.\" Men aven: \"Inte en sarskilt bra plats for personer med demens.\"",
+ dementia:9,physical:8,reviews:7,profile:8,
+ tRose:35,tRoseR:"Lidingobanan, Ropsten, T13 Slussen, buss 74 Sjostaden",
+ tRolf:35,tRolfR:"T11 Tensta, T-centralen, buss/tvarbana Sjostaden"
+},
+{
+ name:"Blomsterfonden Liseberg",
+ area:"soderort",areaLabel:"Alvsjo",
+ op:"ideell",opLabel:"Blomsterfonden",
+ cert:"none",certLabel:"",
+ lgh:66,sqm:"26 till 34 kvm",
+ badges:["Nominerad Kundkristallen","AldrePoer gym","Ideell"],bt:["go","b","g"],
+ desc:"66 lgh, ideell forening. AldrePoer-program: individuell fysisk traning (styrka, balans, rorlighet) med sjukgymnast i eget gym, utmarkt for Rolf. 55 demens + somatik. Festsal, bibliotek, verkstad, gastlagenhet, boule, park med grillplats.",
+ phone:"08-555 94 777",email:"aldresupport@blomsterfonden.se",
+ rent:"Ej publicerad (inkl. hemforsakring, el, TV, bredband)",rentNum:0,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"\"Mycket bra luncher for bara femtio kronor\" (Reco.se). Nominerad till Kundkristallen.",
+ dementia:8,physical:9,reviews:7,profile:8,
+ tRose:40,tRoseR:"Lidingobanan, Ropsten, pendeltag Alvsjo + buss",
+ tRolf:35,tRolfR:"T11 Tensta, T-centralen, pendeltag Alvsjo + buss"
+},
+{
+ name:"Vardaga Silverhoejden",
+ area:"lidingo",areaLabel:"Lidingo (Rudboda)",
+ op:"privat",opLabel:"Vardaga",
+ cert:"demensakademin",certLabel:"Demensakademin",
+ lgh:72,sqm:"",
+ badges:["Demensakademin","Egen kock"],bt:["go","g"],
+ desc:"72 platser pa Lidingo. Demensakademicertifierat, egen kock som lagar fran grunden. Fokus pa rorelse och musik. Lugnt villaomrade.",
+ phone:"",email:"",
+ rent:"Ej publicerad",rentNum:0,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"Inga publicerade recensioner funna.",
+ dementia:8,physical:7,reviews:6,profile:7,
+ tRose:20,tRoseR:"Buss 201/204 eller Lidingobanan",
+ tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan/buss"
+},
+{
+ name:"Vardaga Villa Dalenum",
+ area:"lidingo",areaLabel:"Lidingo (Dalenum)",
+ op:"privat",opLabel:"Vardaga",
+ cert:"demensakademin",certLabel:"Demensakademin",
+ lgh:0,sqm:"",
+ badges:["Demensakademin","Nytt 2018","Sjoutsikt"],bt:["go","b","g"],
+ desc:"I historiska AGA-fabriken, oppnat 2018. Panoramafonster med sjoutsikt. Demens och somatik. Demensakademicertifierat. Nara Rose.",
+ phone:"",email:"",
+ rent:"Ej publicerad",rentNum:0,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"En recension med oro over kvallsvarden. Begraensat underlag.",
+ dementia:8,physical:7,reviews:6,profile:8,
+ tRose:12,tRoseR:"Buss/Lidingobanan kort resa",
+ tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan"
+},
+{
+ name:"Siggebogarden",
+ area:"lidingo",areaLabel:"Lidingo (centralt)",
+ op:"kommun",opLabel:"Lidingo stad",
+ cert:"silviahem",certLabel:"Silviahemscertifierat sedan 2015",
+ lgh:0,sqm:"",
+ badges:["Silviahemscertifierat sedan 2015"],bt:["go"],
+ desc:"Kommunalt, centralt pa Lidingo. Silviahemscertifierat sedan 2015, lang erfarenhet av certifierad demensvard.",
+ phone:"08-731 35 00 (Lidingo stad)",email:"",
+ rent:"Ej publicerad",rentNum:0,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"Inga publicerade recensioner.",
+ dementia:9,physical:7,reviews:6,profile:7,
+ tRose:15,tRoseR:"Buss/Lidingobanan",
+ tRolf:50,tRolfR:"T11 Tensta, T-centralen, T13 Ropsten, Lidingobanan/buss"
+},
+{
+ name:"Forenade Care Tryggheten",
+ area:"norra",areaLabel:"Bergshamra, Solna",
+ op:"privat",opLabel:"Forenade Care",
+ cert:"none",certLabel:"",
+ lgh:31,sqm:"",
+ badges:["100% nojdhet 2024","Djur och natur-profil"],bt:["go","g"],
+ desc:"100% nojdhet i Socialstyrelsens undersokning 2024, hogst i hela regionen! 31 lgh med djur- och naturprofil nara Brunnsviken. Somatisk inriktning.",
+ phone:"",email:"",
+ rent:"Ej publicerad",rentNum:0,
+ dog:"Djur- och naturprofil, troligen valkomnande. Fraga boendet.",dogOk:true,
+ review:"100% nojdhet i Socialstyrelsens undersokning 2024.",
+ dementia:6,physical:8,reviews:10,profile:7,
+ tRose:40,tRoseR:"Lidingobanan, Ropsten, T13, byte T11 Bergshamra",
+ tRolf:25,tRolfR:"T11 Tensta, T11 Bergshamra"
+},
+{
+ name:"Danvikshem",
+ area:"nacka",areaLabel:"Nacka (Finnboda)",
+ op:"ideell",opLabel:"Stiftelsen Danvikshem",
+ cert:"none",certLabel:"WHO-certifierat",
+ lgh:224,sqm:"",
+ badges:["224 platser","Prisbelonad mat","WHO-certifierat"],bt:["b","g","go"],
+ desc:"Stort: 148 demens + 76 somatik. Stiftelse. WHO-certifierat. Arla Guldko-vinnare (mat). OBS: Blandade recensioner, visst missnoje med bemotande. Stort kan kannas opersonligt.",
+ phone:"",email:"",
+ rent:"Ej publicerad",rentNum:0,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"Blandade. Negativ: \"ovanlig personal och lakare utan nagon kansla for manskligt liv.\" Positivt: prisbelonad mat.",
+ dementia:7,physical:7,reviews:5,profile:7,
+ tRose:30,tRoseR:"Lidingobanan, Ropsten, buss 443 Finnboda",
+ tRolf:40,tRolfR:"T11 Tensta, T-centralen, T13 Slussen, buss 443"
+},
+{
+ name:"Humana Asengarden",
+ area:"hagersten",areaLabel:"Hagersten",
+ op:"privat",opLabel:"Humana",
+ cert:"silviahem",certLabel:"Silviahemscertifierat",
+ lgh:29,sqm:"33 till 35 kvm",
+ badges:["Silviahemscertifierat"],bt:["go"],
+ desc:"Silviahemscertifierat, 29 lgh. Litet och personligt. Stockholms stad anser att Humana \"arbetar systematiskt med kvalitetsforbaettring.\"",
+ phone:"",email:"",
+ rent:"Ej publicerad",rentNum:0,
+ dog:"Fraga boendet direkt",dogOk:false,
+ review:"Inga publicerade recensioner.",
+ dementia:9,physical:7,reviews:6,profile:7,
+ tRose:45,tRoseR:"Lidingobanan, Ropsten, T13/14, buss till Hagersten",
+ tRolf:30,tRolfR:"T11 Tensta, T-centralen, T14, buss Hagersten"
+}
 ];
 
-// Compute total scores
-homes.forEach(h => {
-    h.score = Math.round(((h.dementia*0.30 + h.physical*0.25 + h.reviews*0.20 + h.profile*0.10) + (10 - Math.min(h.tRose,60)/6)*0.15)*10)/10;
+H.forEach(h=>{
+ h.score=Math.round(((h.dementia*.30)+(h.physical*.25)+(h.reviews*.20)+(h.profile*.10)+((10-Math.min(h.tRose,60)/6)*.15))*10)/10;
 });
 
-function render() {
-    const area = document.getElementById('f-area').value;
-    const op = document.getElementById('f-op').value;
-    const cert = document.getElementById('f-cert').value;
-    const maxTime = document.getElementById('f-time').value;
-    const sort = document.getElementById('f-sort').value;
+function render(){
+ const a=document.getElementById('f-area').value;
+ const o=document.getElementById('f-op').value;
+ const c=document.getElementById('f-cert').value;
+ const t=document.getElementById('f-time').value;
+ const d=document.getElementById('f-dog').value;
+ const s=document.getElementById('f-sort').value;
 
-    let filtered = homes.filter(h => {
-        if (area && h.area !== area) return false;
-        if (op && h.op !== op) return false;
-        if (cert) {
-            if (cert === 'silviahem' && h.cert !== 'silviahem') return false;
-            if (cert === 'demensakademin' && h.cert !== 'demensakademin') return false;
-            if (cert === 'stjarnmarkt' && h.cert !== 'stjarnmarkt') return false;
-        }
-        if (maxTime && h.tRose > parseInt(maxTime)) return false;
-        return true;
-    });
+ let f=H.filter(h=>{
+  if(a&&h.area!==a)return false;
+  if(o&&h.op!==o)return false;
+  if(c){if(c==='silviahem'&&h.cert!=='silviahem')return false;if(c==='demensakademin'&&h.cert!=='demensakademin')return false;if(c==='stjarnmarkt'&&h.cert!=='stjarnmarkt')return false;}
+  if(t&&h.tRose>parseInt(t))return false;
+  if(d==='yes'&&!h.dogOk)return false;
+  return true;
+ });
 
-    filtered.sort((a,b) => {
-        if (sort === 'score') return b.score - a.score;
-        if (sort === 'dementia') return b.dementia - a.dementia;
-        if (sort === 'physical') return b.physical - a.physical;
-        if (sort === 'reviews') return b.reviews - a.reviews;
-        if (sort === 'travel') return a.tRose - b.tRose;
-        return 0;
-    });
+ f.sort((a,b)=>{
+  if(s==='score')return b.score-a.score;
+  if(s==='dementia')return b.dementia-a.dementia;
+  if(s==='physical')return b.physical-a.physical;
+  if(s==='reviews')return b.reviews-a.reviews;
+  if(s==='travel')return a.tRose-b.tRose;
+  if(s==='rent'){const ra=a.rentNum||99999,rb=b.rentNum||99999;return ra-rb;}
+  return 0;
+ });
 
-    document.getElementById('result-count').textContent = `Visar ${filtered.length} av ${homes.length} boenden`;
+ document.getElementById('rc').textContent=`Visar ${f.length} av ${H.length} boenden`;
 
-    const container = document.getElementById('cards-container');
-    container.innerHTML = filtered.map((h, i) => {
-        const rankNum = i + 1;
-        const rankClass = rankNum <= 2 ? 'r1' : rankNum <= 5 ? 'r3' : 'rn';
-        const scoreClass = h.score >= 8.5 ? 'high' : h.score >= 7 ? 'med' : 'low';
-
-        return `
-        <div class="card">
-            <div class="rank-badge ${rankClass}">#${rankNum}</div>
-            <div class="card-top">
-                <div>
-                    <h3>${h.name}</h3>
-                    <div class="badges">${h.badges.map((b,j) => `<span class="badge ${h.badgeTypes[j]||'b'}">${b}</span>`).join('')}</div>
-                </div>
-                <div class="score-circle ${scoreClass}">
-                    <div class="num">${h.score.toFixed(1)}</div>
-                    <div class="of">av 10</div>
-                </div>
-            </div>
-            <div class="meta">
-                <span>${h.areaLabel}</span>
-                <span>${h.opLabel}</span>
-                ${h.lgh ? `<span>${h.lgh} lgh</span>` : ''}
-                ${h.sqm ? `<span>${h.sqm}</span>` : ''}
-                ${h.certLabel ? `<span>${h.certLabel}</span>` : ''}
-            </div>
-            <p class="desc">${h.desc}</p>
-            <div class="scores-grid">
-                <div class="sc-item"><div class="sc-v">${h.dementia}</div><div class="sc-l">Demensvård</div></div>
-                <div class="sc-item"><div class="sc-v">${h.physical}</div><div class="sc-l">Fysisk vård</div></div>
-                <div class="sc-item"><div class="sc-v">${h.reviews}</div><div class="sc-l">Recensioner</div></div>
-                <div class="sc-item"><div class="sc-v">${h.score.toFixed(1)}</div><div class="sc-l">Totalpoäng</div></div>
-                <div class="sc-item"><div class="sc-v">${h.profile}</div><div class="sc-l">Profil</div></div>
-            </div>
-            <div class="travel">
-                <div class="t">Från Rose: <strong>~${h.tRose} min</strong> <span class="route">${h.tRoseRoute}</span></div>
-                <div class="t">Från Rolf: <strong>~${h.tRolf} min</strong> <span class="route">${h.tRolfRoute}</span></div>
-            </div>
-        </div>`;
-    }).join('');
+ document.getElementById('cards').innerHTML=f.map((h,i)=>{
+  const r=i+1;
+  const rc=r<=2?'g':r<=5?'s':'n';
+  const sc=h.score>=8.5?'hi':h.score>=7?'mi':'lo';
+  return `<div class="card">
+   <div class="rnk ${rc}">#${r}</div>
+   <div class="card-top">
+    <div>
+     <h3>${h.name}</h3>
+     <div class="badges">${h.badges.map((b,j)=>`<span class="bd ${h.bt[j]||'b'}">${b}</span>`).join('')}</div>
+    </div>
+    <div class="sc ${sc}"><div class="num">${h.score.toFixed(1)}</div><div class="of">av 10</div></div>
+   </div>
+   <div class="meta">
+    <span>${h.areaLabel}</span><span>${h.opLabel}</span>${h.lgh?`<span>${h.lgh} lgh</span>`:''}${h.sqm?`<span>${h.sqm}</span>`:''}${h.certLabel?`<span>${h.certLabel}</span>`:''}
+   </div>
+   <p class="desc">${h.desc}</p>
+   <div class="details-grid">
+    ${h.phone?`<div class="det"><span class="dl">Telefon</span><span class="dv">${h.phone}</span></div>`:''}
+    ${h.email?`<div class="det"><span class="dl">E-post</span><span class="dv">${h.email}</span></div>`:''}
+    <div class="det"><span class="dl">Hyra</span><span class="dv">${h.rent}</span></div>
+    <div class="det"><span class="dl">Hund</span><span class="dv">${h.dog}</span></div>
+   </div>
+   ${h.review?`<div class="review-box">${h.review}</div>`:''}
+   <div class="scores-row">
+    <div class="si"><div class="sv">${h.dementia}</div><div class="sl">Demensvard</div></div>
+    <div class="si"><div class="sv">${h.physical}</div><div class="sl">Fysisk vard</div></div>
+    <div class="si"><div class="sv">${h.reviews}</div><div class="sl">Recensioner</div></div>
+    <div class="si"><div class="sv">${h.profile}</div><div class="sl">Profil</div></div>
+    <div class="si"><div class="sv">${h.score.toFixed(1)}</div><div class="sl">Total</div></div>
+   </div>
+   <div class="travel-row">
+    <div class="tr">Rose: <strong>ca ${h.tRose} min</strong> <span class="rt">${h.tRoseR}</span></div>
+    <div class="tr">Rolf: <strong>ca ${h.tRolf} min</strong> <span class="rt">${h.tRolfR}</span></div>
+   </div>
+  </div>`;
+ }).join('');
 }
 
-document.querySelectorAll('.filters select').forEach(el => el.addEventListener('change', render));
+document.querySelectorAll('.filters select').forEach(el=>el.addEventListener('change',render));
 render();
 </script>
-
 </body>
 </html>
